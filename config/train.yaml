@@ -1,0 +1,45 @@
+hydra:
+    run:
+        dir: ./results/train/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+gpu: 0 
+dataset:
+        path: 'datasets/1.no_augmentation'
+        use_cache: False
+        cache_size: 'max'
+        augmentation: 1
+        batch_size: 1
+        ratio: 0.8
+        seed: 10
+dataloader:
+        num_workers: 3
+        pin_memory: True
+model:
+        mean: 0.000703781869206
+        std: 0.011581798172958
+        input_layers: 3
+        layers: 32
+        autoencoder: False
+        residual: True
+        kernal_size: 5
+        activation_function: 'ReLU'
+        pooling_method: 'max'
+        normalization: True
+optimizer:
+        lr: 0.00003
+        step_size: 50
+        gamma: 0.8
+train:
+        epochs: 100
+logger:
+        path: './log.txt'
+        interval: 1 
+save:
+        model: True
+        interval: 10
+
+load:
+        reoptimization: False
+        transfer: False
+        model: 'results/2022-01-04/12-36-34/model.pt'
+        dataloader: 'results/2022-01-04/12-36-34/data.pkl'
