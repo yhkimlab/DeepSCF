@@ -1,9 +1,6 @@
-####                                       ####
-#   SEISTA IO Module by RONG                  #
-####                                       ####
-
+# SEISTA IO Module 
+# Writer: RG Lee
 # Ver. 1.0. Date : 2020/6/17
-
 # Description: SIESTA I/O interface
 
 #--------- Medules list ---------#

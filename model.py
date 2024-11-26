@@ -20,7 +20,6 @@ class ResUNet(nn.Module):
 
         # Residual learning
         residual = args.residual  # skip-connection
-        autoencoder = not args.autoencoder
         self.residual = residual
 
         # Normalization
@@ -92,19 +91,16 @@ class ResUNet(nn.Module):
         # Decoder modules
         self.decoder1 = Decoder(in_channels=8*layers,
                                 out_channels=4*layers,
-                                residual=autoencoder,
                                 kernal_size=size,
                                 activation_function=activation_function
                                )
         self.decoder2 = Decoder(in_channels=4*layers,
                                 out_channels=2*layers,
-                                residual=autoencoder,
                                 kernal_size=size,
                                 activation_function=activation_function
                                )
         self.decoder3 = Decoder(in_channels=2*layers,
                                 out_channels=layers,
-                                residual=autoencoder,
                                 kernal_size=size,
                                 activation_function=activation_function
                                )
@@ -163,9 +159,8 @@ class ResUNet(nn.Module):
 
 class Decoder(nn.Module):
 
-    def __init__(self, in_channels, out_channels, residual, kernal_size, activation_function):
+    def __init__(self, in_channels, out_channels, kernal_size, activation_function):
         super(Decoder, self).__init__()
-        self.residual = residual
         size = kernal_size
 
         # upsampling
@@ -198,31 +193,14 @@ class Decoder(nn.Module):
             activation_function
 
         )
-        self.convolution3 = nn.Sequential(
-            nn.Conv3d(in_channels=in_channels,
-                      out_channels=out_channels,
-                      kernel_size=(5,5,5),
-                      stride=(1,1,1),
-                      padding="same",
-                      padding_mode="circular",
-                      bias=False),
-            activation_function
-
-        )
-
 
     def forward(self, x, x0):
 
-        residual = self.residual
         out = self.upsampling(x)
+        out = torch.cat((out, x0), dim=1) # skip connection
+        out = self.convolution1(out)
+        out = self.convolution2(out)
 
-        if (residual):
-            out = torch.cat((out, x0), dim=1) # skip connection
-            out = self.convolution1(out)
-            out = self.convolution2(out)
-        else:
-            out = self.convolution3(out)
-            out = self.convolution2(out)
         return out
 
 

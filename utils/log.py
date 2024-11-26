@@ -3,15 +3,13 @@ from omegaconf import OmegaConf
 
 class logger():
 
-    def __init__(self, path = './log.txt', mode = 'w'):
+    def __init__(self, path = './log.txt'):
 
         self.path = path
         if not os.path.isfile(path):
-            f = open(path, 'w')
-            f.close()
+            self.mode = 'a'
         else:
-            f = open(path, 'w')
-            f.close()
+            self.mode = 'w'
         self.log = ""
 
     def summary_model(self, args, num_parameter):
@@ -23,7 +21,6 @@ class logger():
             f.write(f'{k}: {i}\n')
         f.write(f'Number of parameters {num_parameter}\n')
         f.close()
-
 
     def update(self, **kwags):
 
@@ -42,7 +39,7 @@ class logger():
 
     def save(self):
 
-        f = open(f'{self.path}', 'a')
+        f = open(f'{self.path}', self.mode)
         txt = self.log
         f.write(txt)
         f.close()
