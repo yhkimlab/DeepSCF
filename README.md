@@ -2,7 +2,7 @@
 DeepSCF
 ======
 <p align="center">
-  <img height="180" src="./logo/shematics.png"/>
+  <img height="240" src="./logo/shematics.png"/>
 </p>
 
 The DeepSCF is a machine-learning strategy to accelerate the density functional theory (DFT) calculations by learning the map between the self-consistent field (SCF) electron density $\rho$ and the initial guess density $\rho_0$. This repository contains the official implementation as described in the paper: [*Convolutional network learning of self-consistent electron density via grid-projected atomic fingerprints*](https://doi.org/10.1038/s41524-024-01433-0). The implementation employs three-dimensional (3D) convolutional neural networks (CNNs) based on the [U-Net](https://arxiv.org/abs/1505.04597) architecture, using the PyTorch framework.  
