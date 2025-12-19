@@ -12,7 +12,7 @@ The DeepSCF is a machine-learning strategy to accelerate the density functional 
 ### Installation
 Run the following command in the path of DeepSCF:
 ```bash
-git clone https://github.com/mzjb/DeepH-pack.git
+git clone https://github.com/yhkimlab/DeepSCF.git
 cd DeepSCF
 ```
 
