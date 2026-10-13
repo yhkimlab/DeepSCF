@@ -1,0 +1,30 @@
+SystemLabel SQUARE_dH
+
+# A very small netcdf file
+# should also compress
+# Also if the chunk-sizes has been set
+# badly compression will actually preform much worse
+# than not compressing. (check against SQUARE.TBT.nc)
+TBT.CDF.Compress 3
+
+TBT.TSHS ../SQUARE_DEV.nc
+
+# We employ the dH method
+TBT.dH ../SQUARE_dH.nc
+
+%block TBT.Elec.left
+  TSHS ../SQUARE_EL.nc
+  chemical-potential left
+  semi-inf-direction -a2
+  electrode-position 1
+  check-kgrid F
+%endblock TBT.Elec.left
+%block TBT.Elec.right
+  TSHS ../SQUARE_EL.nc
+  chemical-potential Right
+  semi-inf-direction +a2
+  electrode-position end -1
+  check-kgrid F
+%endblock TBT.Elec.right
+
+%include TBT.fdf

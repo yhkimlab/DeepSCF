@@ -1,0 +1,52 @@
+# @package _global_
+
+hydra:
+  run:
+    dir: './results/train/hyperparameter/3.Kernel/3'
+
+gpu: 1
+
+dataset:
+  path: 'datasets/train/original'
+  use_cache: false
+  cache_size: 'max'
+  augmentation: 1
+  batch_size: 1
+  ratio: 0.8
+  seed: 10
+
+dataloader:
+  num_workers: 3
+  pin_memory: true
+
+model:
+  mean: 0.000703779252432
+  std: 0.011038692725739
+  input_layers: 3
+  layers: 32
+  residual: true
+  kernal_size: 3
+  activation_function: 'ReLU'
+  pooling_method: 'max'
+  normalization: true
+
+optimizer:
+  lr: 0.0001
+  step_size: 50
+  gamma: 0.8
+
+train:
+  epochs: 100
+
+logger:
+  path: './log.txt'
+  interval: 1
+
+save:
+  model: true
+  interval: 10
+
+load:
+  reoptimization: false
+  model: 'pretrained/original/model.pt'
+  dataloader: 'pretrained/original/data.pkl'

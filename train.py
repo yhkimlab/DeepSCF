@@ -71,7 +71,7 @@ def reference(device, test_loader, loss_function):
     return reference_loss
 
 
-@hydra.main(config_path="config", config_name="train")
+@hydra.main(config_path="configs/train", config_name="default")
 def main(args: DictConfig):
 
     # save current codes to working directory
@@ -101,19 +101,6 @@ def main(args: DictConfig):
 
         # epoch index
         start_epoch = int(checkpoint['epoch'])+1
-
-    elif (args.load.transfer):
-        # load saved model & optimizer
-        path = hydra.utils.get_original_cwd()+'/'+args.load.model
-        checkpoint = torch.load(path)
-        model.load_state_dict(checkpoint)
-
-        # dataloader
-        dummy_loader, test_loader = data.load_dataloader(args)
-        train_loader, dummy_loader = data.create_dataloader(args)
-
-        # epoch index
-        start_epoch = 1
 
     else:
         # dataloader

@@ -1,0 +1,3014 @@
+Siesta Version  : siesta-4.1-1033
+Architecture    : x86_64-linux-n-62-18-18
+Compiler version: GNU Fortran (GCC) 7.3.0
+Compiler flags  : mpifort -m64 -fPIC -O3 -march=native -ftree-vectorize -fexpensive-optimizatioons -funroll-loops -fprefetch-loop-arrays -fno-second-underscore  -flto
+PP flags        : -I/zdata/groups/common/nicpa/2018-feb/generic/build-tools/1.0/include -I/zdatta/groups/common/nicpa/2018-feb/generic/gcc/7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/generic/gcc/7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/zlib/1.2.11/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/generic/numactl/2.0.11/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/libxml2/2.9.7/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/hwloc/1.11.9/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/openmpi/3.0.0/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/szip/2.1.1/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/hdf5/1.8.18/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/pnetcdf/1.8.1/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/netcdf/4.6.0/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/flook/0.7.0/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/parmetis/4.0.3/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/scalapack/204/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/openblas/0.2.20/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/scotch/6.0.4/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/mumps/5.1.2/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/fftw/3.3.7/gnu-7.3.0/include -I/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/elpa/2017.05.003/gnu-7.3.0/include/elpa -DSIESTA__ELPA -DMPI -D1 -DFC_HAVE_ABORT -DCDF -DCDF4 -DSIESTA__FLOOK  -DNCDF -DNCDF_4 -DNCDF_PARALLEL -DSIESTA__METIS -DSIESTA__MUMPS -DTS_NOCHECKS -DSIESTA__MRRR
+Libraries       : libncdf.a libfdict.a -lnetcdff -lnetcdf -lpnetcdf -lhdf5_hl -lhdf5 -lz  -lzmuumps -lmumps_common -lesmumps -lscotch -lscotcherr -lpord -lparmetis -lmetis -lelpa -lscalapack -lopenblas  -L/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/flook/0.7.0/gnu-7.3.0/lib -Wl,-rpath=/zdata/groups/common/nicpa/2018-feb/XeonE5-2665/flook/0.7.0/gnu-7.3.0/lib -lflookall -ldl  -flto -fuse-linker-plugin  -lmetis
+PARALLEL version
+NetCDF support
+NetCDF-4 support
+NetCDF-4 MPI-IO support
+METIS ordering support
+
+* Running on 8 nodes in parallel
+>> Start of run:   5-NOV-2018  10:55:05
+
+                           ***********************       
+                           *  WELCOME TO SIESTA  *       
+                           ***********************       
+
+reinit: Reading from ../mix_broyden.fdf
+
+reinit: -----------------------------------------------------------------------
+reinit: System Name: Linear Fe3 cluster.
+reinit: -----------------------------------------------------------------------
+reinit: System Label: mix_broyden
+reinit: -----------------------------------------------------------------------
+
+initatom: Reading input for the pseudopotentials and atomic orbitals ----------
+Species number:   1 Atomic number:   26 Label: fe_nc
+
+Ground state valence configuration:   4s02  3d06
+Reading pseudopotential information in formatted form from fe_nc.psf
+
+Valence configuration for pseudopotential generation:
+4s( 1.00) rc: 2.00
+4p( 0.00) rc: 2.00
+3d( 7.00) rc: 2.00
+4f( 0.00) rc: 2.00
+For fe_nc, standard SIESTA heuristics set lmxkb to 3
+ (one more than the basis l, including polarization orbitals).
+Use PS.lmax or PS.KBprojectors blocks to override.
+
+<basis_specs>
+===============================================================================
+fe_nc                Z=  26    Mass=  55.850        Charge= 0.17977+309
+Lmxo=2 Lmxkb= 3    BasisType=split      Semic=F
+L=0  Nsemic=0  Cnfigmx=4
+          n=1  nzeta=2  polorb=1
+            splnorm:   0.15000    
+               vcte:    0.0000    
+               rinn:    0.0000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=1  Nsemic=0  Cnfigmx=4
+L=2  Nsemic=0  Cnfigmx=3
+          n=1  nzeta=2  polorb=0
+            splnorm:   0.15000    
+               vcte:    0.0000    
+               rinn:    0.0000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+-------------------------------------------------------------------------------
+L=0  Nkbl=1  erefs: 0.17977+309
+L=1  Nkbl=1  erefs: 0.17977+309
+L=2  Nkbl=1  erefs: 0.17977+309
+L=3  Nkbl=1  erefs: 0.17977+309
+===============================================================================
+</basis_specs>
+
+atom: Called for fe_nc                 (Z =  26)
+
+read_vps: Pseudopotential generation method:
+read_vps: ATM3      Troullier-Martins                       
+Total valence charge:    8.00000
+
+read_vps: Pseudopotential includes a core correction:
+read_vps: Pseudo-core for xc-correction
+
+xc_check: Exchange-correlation functional:
+xc_check: Ceperley-Alder
+V l=0 = -2*Zval/r beyond r=  2.8345
+V l=1 = -2*Zval/r beyond r=  2.8345
+V l=2 = -2*Zval/r beyond r=  2.8345
+V l=3 = -2*Zval/r beyond r=  2.8345
+All V_l potentials equal beyond r=  1.9726
+This should be close to max(r_c) in ps generation
+All pots = -2*Zval/r beyond r=  2.8345
+Using large-core scheme for Vlocal
+
+atom: Estimated core radius    2.83451
+atom: Maximum radius for 4*pi*r*r*local-pseudopot. charge    3.13263
+atom: Maximum radius for r*vlocal+2*Zval:    2.87017
+GHOST: No ghost state for L =  0
+GHOST: No ghost state for L =  1
+GHOST: No ghost state for L =  2
+GHOST: No ghost state for L =  3
+
+KBgen: Kleinman-Bylander projectors: 
+   l= 0   rc=  2.047986   el= -0.319855   Ekb=  3.923406   kbcos=  0.252820
+   l= 1   rc=  2.047986   el= -0.070931   Ekb=  3.313875   kbcos=  0.157841
+   l= 2   rc=  2.022544   el= -0.307264   Ekb=-12.478630   kbcos= -0.654791
+   l= 3   rc=  2.047986   el=  0.003534   Ekb= -1.656634   kbcos= -0.005966
+
+KBgen: Total number of  Kleinman-Bylander projectors:   16
+atom: -------------------------------------------------------------------------
+
+atom: SANKEY-TYPE ORBITALS:
+atom: Selected multiple-zeta basis: split     
+
+SPLIT: Orbitals with angular momentum L= 0
+
+SPLIT: Basis orbitals for state 4s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.020000 Ry
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    6.799774
+                 energy =   -0.302238
+                kinetic =    0.298810
+    potential(screened) =   -0.601048
+       potential(ionic) =   -5.818758
+
+   izeta = 2
+                 rmatch =    6.468141
+              splitnorm =    0.150000
+                 energy =   -0.257217
+                kinetic =    0.445909
+    potential(screened) =   -0.703126
+       potential(ionic) =   -6.273620
+
+SPLIT: Orbitals with angular momentum L= 2
+
+SPLIT: Basis orbitals for state 3d
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.020000 Ry
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    4.022404
+                 energy =   -0.287031
+                kinetic =    8.952870
+    potential(screened) =   -9.239901
+       potential(ionic) =  -18.247427
+
+   izeta = 2
+                 rmatch =    2.291856
+              splitnorm =    0.150000
+                 energy =    0.070417
+                kinetic =   12.282791
+    potential(screened) =  -12.212374
+       potential(ionic) =  -21.929746
+
+POLgen: Perturbative polarization orbital with L=  1
+
+POLgen: Polarization orbital for state 4s
+
+   izeta = 1
+                     rc =    6.799774
+                 energy =   -0.003154
+                kinetic =    0.566601
+    potential(screened) =   -0.569755
+       potential(ionic) =   -5.393577
+atom: Total number of Sankey-type orbitals: 15
+
+atm_pop: Valence configuration (for local Pseudopot. screening):
+ 4s( 2.00)                                                            
+ 4p( 0.00)                                                            
+ 3d( 6.00)                                                            
+Vna: chval, zval:    8.00000   8.00000
+
+Vna:  Cut-off radius for the neutral-atom potential:   6.799774
+comcore: Pseudo-core radius Rcore=  3.874354
+
+atom: _________________________________________________________________________
+
+prinput: Basis input ----------------------------------------------------------
+
+PAO.BasisType split     
+
+%block ChemicalSpeciesLabel
+    1   26 fe_nc                   # Species index, atomic number, species label
+%endblock ChemicalSpeciesLabel
+
+%block PAO.Basis                 # Define Basis set
+fe_nc                 2                    # Species label, number of l-shells
+ n=4   0   2 P   1                   # n, l, Nzeta, Polarization, NzetaPol
+   6.800      6.468   
+   1.000      1.000   
+ n=3   2   2                         # n, l, Nzeta 
+   4.022      2.292   
+   1.000      1.000   
+%endblock PAO.Basis
+
+prinput: ----------------------------------------------------------------------
+
+Dumping basis to NetCDF file fe_nc.ion.nc
+coor:   Atomic-coordinates input format  =     Cartesian coordinates
+coor:                                            (in Bohr units)
+
+siesta: Atomic coordinates (Bohr) and species
+siesta:      0.00000   0.00000   3.64400  1        1
+siesta:      0.00000   0.00000   0.00000  1        2
+siesta:      0.00000   0.00000  -3.64400  1        3
+
+siesta: System type = bulk      
+
+initatomlists: Number of atoms, orbitals, and projectors:      3    45    48
+
+siesta: ******************** Simulation parameters ****************************
+siesta:
+siesta: The following are some of the parameters of the simulation.
+siesta: A complete list of the parameters used, including default values,
+siesta: can be found in file out.fdf
+siesta:
+redata: Spin configuration                          = non-collinear
+redata: Number of spin components                   = 4
+redata: Time-Reversal Symmetry                      = F
+redata: Spin-spiral                                 = F
+redata: Long output                                 =   F
+redata: Number of Atomic Species                    =        1
+redata: Charge density info will appear in .RHO file
+redata: Write Mulliken Pop.                         = Atomic and Orbital charges
+redata: Matel table size (NRTAB)                    =     1024
+redata: Mesh Cutoff                                 =   150.0000 Ry
+redata: Net charge of the system                    =     0.0000 |e|
+redata: Min. number of SCF Iter                     =        0
+redata: Max. number of SCF Iter                     =     1000
+redata: SCF convergence failure will abort job
+redata: SCF mix quantity                            = Hamiltonian
+redata: Mix DM or H after convergence               =   F
+redata: Recompute H after scf cycle                 =   F
+redata: Mix DM in first SCF step                    =   T
+redata: Write Pulay info on disk                    =   F
+redata: New DM Mixing Weight                        =     0.2500
+redata: New DM Occupancy tolerance                  = 0.000000000001
+redata: No kicks to SCF
+redata: DM Mixing Weight for Kicks                  =     0.5000
+redata: Require Harris convergence for SCF          =   F
+redata: Harris energy tolerance for SCF             =     0.000100 eV
+redata: Require DM convergence for SCF              =   T
+redata: DM tolerance for SCF                        =     0.000100
+redata: Require EDM convergence for SCF             =   F
+redata: EDM tolerance for SCF                       =     0.001000 eV
+redata: Require H convergence for SCF               =   T
+redata: Hamiltonian tolerance for SCF               =     0.001000 eV
+redata: Require (free) Energy convergence for SCF   =   F
+redata: (free) Energy tolerance for SCF             =     0.000100 eV
+redata: Using Saved Data (generic)                  =   F
+redata: Use continuation files for DM               =   T
+redata: Neglect nonoverlap interactions             =   F
+redata: Method of Calculation                       = Diagonalization
+redata: Electronic Temperature                      =  1160.4438 K
+redata: Fix the spin of the system                  =   F
+redata: Dynamics option                             = Single-point calculation
+mix.SCF: Debug messages                          = T
+mix.SCF: Broyden mixing                          = broyden
+mix.SCF:    History steps                        = 6
+mix.SCF:    Jacobian weight                      =     0.010000
+mix.SCF:    Weight prime                         =     0.010000
+mix.SCF: Spin-component mixing                   all
+redata: Save all siesta data in one NC              =   F
+redata: ***********************************************************************
+
+%block SCF.Mixers
+  broyden
+%endblock SCF.Mixers
+
+%block SCF.Mixer.broyden
+  # Mixing method
+  method broyden
+
+  # Mixing options
+  weight 0.0100
+  weight.linear 0.0100
+  history 6
+%endblock SCF.Mixer.broyden
+
+DM_history_depth set to one: no extrapolation allowed by default for geometry relaxation
+Size of DM history Fstack: 1
+Total number of electrons:    24.000000
+Total ionic charge:    24.000000
+
+* ProcessorY, Blocksize:    2   6
+
+
+* Orbital distribution balance (max,min):     6     3
+
+
+Time-reversal symmetry not used.
+
+siesta: k-grid: Number of k-points =     1
+siesta: k-grid: Cutoff (effective) =     3.175 Ang
+siesta: k-grid: Supercell and displacements
+siesta: k-grid:    1   0   0      0.000
+siesta: k-grid:    0   1   0      0.000
+siesta: k-grid:    0   0   1      0.000
+
+diag: Algorithm                                     = D&C
+diag: Parallel over k                               =   F
+diag: Use parallel 2D distribution                  =   T
+diag: Parallel block-size                           = 6
+diag: Parallel distribution                         =     2 x     4
+diag: Used triangular part                          = Lower
+diag: Absolute tolerance                            =  0.100E-15
+diag: Orthogonalization factor                      =  0.100E-05
+diag: Memory factor                                 =  1.0000
+
+
+ts: **************************************************************
+ts: Save H and S matrices                           =    F
+ts: Save DM and EDM matrices                        =    F
+ts: Fix Hartree potential                           =    F
+ts: Only save the overlap matrix S                  =    F
+ts: **************************************************************
+
+************************ Begin: TS CHECKS AND WARNINGS ************************
+************************ End: TS CHECKS AND WARNINGS **************************
+
+
+                     ====================================
+                        Single-point calculation
+                     ====================================
+
+outcell: Unit cell vectors (Ang):
+        6.350124    0.000000    0.000000
+        0.000000    6.350124    0.000000
+        0.000000    0.000000   10.583540
+
+outcell: Cell vector modules (Ang)   :    6.350124    6.350124   10.583540
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    426.7715
+Gamma-point calculation with interaction between periodic images
+Some features might not work optimally:
+e.g. DM initialization from atomic data
+<dSpData1D:S at geom step 0
+  <sparsity:sparsity for geom step 0
+    nrows_g=45 nrows=6 sparsity=.1333 nnzs=270, refcount: 7>
+  <dData1D:(new from dSpData1D) n=270, refcount: 1>
+refcount: 1>
+new_DM -- step:     1
+Initializing Density Matrix...
+
+Attempting to read DM from file... Failed...
+DM filled with atomic data (user-defined):
+<dSpData2D:DM initialized from atoms
+  <sparsity:sparsity for geom step 0
+    nrows_g=45 nrows=6 sparsity=.1333 nnzs=270, refcount: 8>
+  <dData2D:DM n=270 m=4, refcount: 1>
+refcount: 1>
+     spin moment: S , {S} =    1.50000   1.50000   0.00000   0.00000
+No. of atoms with KB's overlaping orbs in proc 0. Max # of overlaps:       3      45
+New grid distribution:   1
+           1       1:   24    1:   12    1:   10
+           2       1:   24    1:   12   11:   20
+           3       1:   24    1:   12   21:   30
+           4       1:   24    1:   12   31:   40
+           5       1:   24   13:   24    1:   10
+           6       1:   24   13:   24   11:   20
+           7       1:   24   13:   24   21:   30
+           8       1:   24   13:   24   31:   40
+
+InitMesh: MESH =    48 x    48 x    80 =      184320
+InitMesh: (bp) =    24 x    24 x    40 =       23040
+InitMesh: Mesh cutoff (required, used) =   150.000   157.914 Ry
+ExtMesh (bp) on 0 =    80 x    68 x    66 =      359040
+New grid distribution:   2
+           1      12:   24    1:   11    1:   15
+           2       1:   11    1:   11    1:   15
+           3      12:   24    1:   11   16:   40
+           4       1:   11    1:   11   16:   40
+           5      12:   24   12:   24    1:   15
+           6       1:   11   12:   24    1:   15
+           7      12:   24   12:   24   16:   40
+           8       1:   11   12:   24   16:   40
+New grid distribution:   3
+           1       1:   12   13:   24   20:   40
+           2      13:   24    1:   12    1:   19
+           3      13:   24    1:   12   20:   40
+           4      13:   24   13:   24    1:   19
+           5       1:   12    1:   12   20:   40
+           6       1:   12    1:   12    1:   19
+           7      13:   24   13:   24   20:   40
+           8       1:   12   13:   24    1:   19
+Setting up quadratic distribution...
+ExtMesh (bp) on 0 =    69 x    67 x    71 =      328233
+PhiOnMesh: Number of (b)points on node 0 =                 2145
+PhiOnMesh: nlist on node 0 =                25197
+
+stepf: Fermi-Dirac step function
+
+siesta: Program's energy decomposition (eV):
+siesta: Ebs     =       296.476352
+siesta: Eions   =      2141.484345
+siesta: Ena     =        95.469235
+siesta: Ekin    =      2893.915035
+siesta: Enl     =     -1845.483355
+siesta: Eso     =         0.000000
+siesta: Eldau   =         0.000000
+siesta: DEna    =      -119.963179
+siesta: DUscf   =        64.241194
+siesta: DUext   =         0.000000
+siesta: Enegf   =         0.000000
+siesta: Exc     =     -1226.444746
+siesta: eta*DQ  =         0.000000
+siesta: Emadel  =         0.000000
+siesta: Emeta   =         0.000000
+siesta: Emolmec =         0.000000
+siesta: Ekinion =         0.000000
+siesta: Eharris =     -2188.640584
+siesta: Etot    =     -2279.750162
+siesta: FreeEng =     -2280.304327
+mix (1): Broyden
+mix (1): Broyden (initial), alpha = 0.1000E-01
+mix (2): Broyden
+mix (2): Broyden (initial), alpha = 0.1000E-01
+mix (3): Broyden
+mix (3): Broyden (initial), alpha = 0.1000E-01
+mix (4): Broyden
+mix (4): Broyden (initial), alpha = 0.1000E-01
+mix (5): Broyden
+mix (5): Broyden (initial), alpha = 0.1000E-01
+mix (6): Broyden
+mix (6): Broyden (initial), alpha = 0.1000E-01
+mix (7): Broyden
+mix (7): Broyden (initial), alpha = 0.1000E-01
+
+        iscf     Eharris(eV)        E_KS(eV)     FreeEng(eV)     dDmax    Ef(eV) dHmax(eV)
+   scf:    1    -2188.640584    -2279.750162    -2280.304327  0.981601 -7.983648 45.034996
+     spin moment: S , {S} =    1.52543   1.52543   0.00000   0.00000
+mix (0): Broyden
+mix (0): Broyden (initial), alpha = 0.1000E-01
+timer: Routine,Calls,Time,% = IterSCF        1       0.153   9.51
+mix (7): Broyden
+mix (7): n_hist = 2 / 6
+mix (7): weights =  0.1363E+01
+mix (7): G =   0.010000, sum(coeff) = 0.9719E+01, coeff =  0.9719E+01
+mix (1): Broyden
+mix (1): n_hist = 2 / 6
+mix (1): weights =  0.1363E+01
+mix (1): G =   0.010000, sum(coeff) = 0.9719E+01, coeff =  0.9719E+01
+mix (2): Broyden
+mix (2): n_hist = 2 / 6
+mix (2): weights =  0.1363E+01
+mix (2): G =   0.010000, sum(coeff) = 0.9719E+01, coeff =  0.9719E+01
+mix (3): Broyden
+mix (3): n_hist = 2 / 6
+mix (3): weights =  0.1363E+01
+mix (3): G =   0.010000, sum(coeff) = 0.9719E+01, coeff =  0.9719E+01
+mix (4): Broyden
+mix (4): n_hist = 2 / 6
+mix (4): weights =  0.1363E+01
+mix (4): G =   0.010000, sum(coeff) = 0.9719E+01, coeff =  0.9719E+01
+mix (5): Broyden
+mix (5): n_hist = 2 / 6
+mix (5): weights =  0.1363E+01
+mix (5): G =   0.010000, sum(coeff) = 0.9719E+01, coeff =  0.9719E+01
+mix (6): Broyden
+mix (6): n_hist = 2 / 6
+mix (6): weights =  0.1363E+01
+mix (6): G =   0.010000, sum(coeff) = 0.9719E+01, coeff =  0.9719E+01
+   scf:    2    -2292.420663    -2286.268298    -2286.816782  0.043496 -7.833621 41.185435
+     spin moment: S , {S} =    1.58299   1.58299   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 2 / 6
+mix (0): weights =  0.1363E+01
+mix (0): G =   0.010000, sum(coeff) = 0.9719E+01, coeff =  0.9719E+01
+mix (6): Broyden
+mix (6): n_hist = 3 / 6
+mix (6): weights =  0.1363E+01 0.1475E+01
+mix (6): G =   0.010000, sum(coeff) = 0.4833E+02, coeff =  0.5169E+02 -.3364E+01
+mix (7): Broyden
+mix (7): n_hist = 3 / 6
+mix (7): weights =  0.1363E+01 0.1475E+01
+mix (7): G =   0.010000, sum(coeff) = 0.4833E+02, coeff =  0.5169E+02 -.3364E+01
+mix (1): Broyden
+mix (1): n_hist = 3 / 6
+mix (1): weights =  0.1363E+01 0.1475E+01
+mix (1): G =   0.010000, sum(coeff) = 0.4833E+02, coeff =  0.5169E+02 -.3364E+01
+mix (2): Broyden
+mix (2): n_hist = 3 / 6
+mix (2): weights =  0.1363E+01 0.1475E+01
+mix (2): G =   0.010000, sum(coeff) = 0.4833E+02, coeff =  0.5169E+02 -.3364E+01
+mix (3): Broyden
+mix (3): n_hist = 3 / 6
+mix (3): weights =  0.1363E+01 0.1475E+01
+mix (3): G =   0.010000, sum(coeff) = 0.4833E+02, coeff =  0.5169E+02 -.3364E+01
+mix (4): Broyden
+mix (4): n_hist = 3 / 6
+mix (4): weights =  0.1363E+01 0.1475E+01
+mix (4): G =   0.010000, sum(coeff) = 0.4833E+02, coeff =  0.5169E+02 -.3364E+01
+mix (5): Broyden
+mix (5): n_hist = 3 / 6
+mix (5): weights =  0.1363E+01 0.1475E+01
+mix (5): G =   0.010000, sum(coeff) = 0.4833E+02, coeff =  0.5169E+02 -.3364E+01
+   scf:    3    -2084.523242    -2251.989121    -2252.144453  0.480295 -5.887219 32.313722
+     spin moment: S , {S} =    2.31256   2.31256   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 3 / 6
+mix (0): weights =  0.1363E+01 0.1475E+01
+mix (0): G =   0.010000, sum(coeff) = 0.4833E+02, coeff =  0.5169E+02 -.3364E+01
+mix (5): Broyden
+mix (5): n_hist = 4 / 6
+mix (5): weights =  0.1475E+01 0.1475E+01 0.1138E+01
+mix (5): G =   0.010000, sum(coeff) = 0.2423E+02, coeff =  0.2733E+02 -.3420E+01 0.3126E+00
+mix (6): Broyden
+mix (6): n_hist = 4 / 6
+mix (6): weights =  0.1475E+01 0.1475E+01 0.1138E+01
+mix (6): G =   0.010000, sum(coeff) = 0.2423E+02, coeff =  0.2733E+02 -.3420E+01 0.3126E+00
+mix (7): Broyden
+mix (7): n_hist = 4 / 6
+mix (7): weights =  0.1475E+01 0.1475E+01 0.1138E+01
+mix (7): G =   0.010000, sum(coeff) = 0.2423E+02, coeff =  0.2733E+02 -.3420E+01 0.3126E+00
+mix (1): Broyden
+mix (1): n_hist = 4 / 6
+mix (1): weights =  0.1475E+01 0.1475E+01 0.1138E+01
+mix (1): G =   0.010000, sum(coeff) = 0.2423E+02, coeff =  0.2733E+02 -.3420E+01 0.3126E+00
+mix (2): Broyden
+mix (2): n_hist = 4 / 6
+mix (2): weights =  0.1475E+01 0.1475E+01 0.1138E+01
+mix (2): G =   0.010000, sum(coeff) = 0.2423E+02, coeff =  0.2733E+02 -.3420E+01 0.3126E+00
+mix (3): Broyden
+mix (3): n_hist = 4 / 6
+mix (3): weights =  0.1475E+01 0.1475E+01 0.1138E+01
+mix (3): G =   0.010000, sum(coeff) = 0.2423E+02, coeff =  0.2733E+02 -.3420E+01 0.3126E+00
+mix (4): Broyden
+mix (4): n_hist = 4 / 6
+mix (4): weights =  0.1475E+01 0.1475E+01 0.1138E+01
+mix (4): G =   0.010000, sum(coeff) = 0.2423E+02, coeff =  0.2733E+02 -.3420E+01 0.3126E+00
+   scf:    4    -1531.868964    -1956.775689    -1956.775690  0.553726 -2.765724102.339906
+     spin moment: S , {S} =    0.01190   0.01190   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 4 / 6
+mix (0): weights =  0.1475E+01 0.1475E+01 0.1138E+01
+mix (0): G =   0.010000, sum(coeff) = 0.2423E+02, coeff =  0.2733E+02 -.3420E+01 0.3126E+00
+mix (4): Broyden
+mix (4): n_hist = 5 / 6
+mix (5): Broyden
+mix (5): n_hist = 5 / 6
+mix (6): Broyden
+mix (6): n_hist = 5 / 6
+mix (7): Broyden
+mix (7): n_hist = 5 / 6
+mix (1): Broyden
+mix (1): n_hist = 5 / 6
+mix (2): Broyden
+mix (2): n_hist = 5 / 6
+mix (3): Broyden
+mix (3): n_hist = 5 / 6
+   scf:    5    -1928.700444    -1942.825226    -1942.825226  0.053888 -2.916071103.149498
+     spin moment: S , {S} =    0.00835   0.00835   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 5 / 6
+mix (3): weights =  0.1475E+01 0.1138E+01 0.1138E+01 0.1137E+01
+mix (3): G =   0.010000, sum(coeff) = -.1084E+02, coeff =  0.1795E+01 -.5812E+00 -.8157E+00 -.1124E+02
+mix (4): weights =  0.1475E+01 0.1138E+01 0.1138E+01 0.1137E+01
+mix (4): G =   0.010000, sum(coeff) = -.1084E+02, coeff =  0.1795E+01 -.5812E+00 -.8157E+00 -.1124E+02
+mix (5): weights =  0.1475E+01 0.1138E+01 0.1138E+01 0.1137E+01
+mix (5): G =   0.010000, sum(coeff) = -.1084E+02, coeff =  0.1795E+01 -.5812E+00 -.8157E+00 -.1124E+02
+mix (6): weights =  0.1475E+01 0.1138E+01 0.1138E+01 0.1137E+01
+mix (6): G =   0.010000, sum(coeff) = -.1084E+02, coeff =  0.1795E+01 -.5812E+00 -.8157E+00 -.1124E+02
+mix (7): weights =  0.1475E+01 0.1138E+01 0.1138E+01 0.1137E+01
+mix (7): G =   0.010000, sum(coeff) = -.1084E+02, coeff =  0.1795E+01 -.5812E+00 -.8157E+00 -.1124E+02
+mix (1): weights =  0.1475E+01 0.1138E+01 0.1138E+01 0.1137E+01
+mix (1): G =   0.010000, sum(coeff) = -.1084E+02, coeff =  0.1795E+01 -.5812E+00 -.8157E+00 -.1124E+02
+mix (2): weights =  0.1475E+01 0.1138E+01 0.1138E+01 0.1137E+01
+mix (2): G =   0.010000, sum(coeff) = -.1084E+02, coeff =  0.1795E+01 -.5812E+00 -.8157E+00 -.1124E+02
+mix (0): weights =  0.1475E+01 0.1138E+01 0.1138E+01 0.1137E+01
+mix (0): G =   0.010000, sum(coeff) = -.1084E+02, coeff =  0.1795E+01 -.5812E+00 -.8157E+00 -.1124E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1138E+01 0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1138E+01 0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1138E+01 0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1138E+01 0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1138E+01 0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1138E+01 0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01
+   scf:    6    -1677.301539    -2227.045514    -2227.246958  0.931820 -1.236265 43.605868
+     spin moment: S , {S} =    0.49073   0.49073   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (1): G =   0.010000, sum(coeff) = -.2749E+01, coeff =  -.5315E+00 -.4081E-01 -.3376E+00 -.1329E+01 -.5103E+00
+mix (2): G =   0.010000, sum(coeff) = -.2749E+01, coeff =  -.5315E+00 -.4081E-01 -.3376E+00 -.1329E+01 -.5103E+00
+mix (3): G =   0.010000, sum(coeff) = -.2749E+01, coeff =  -.5315E+00 -.4081E-01 -.3376E+00 -.1329E+01 -.5103E+00
+mix (4): weights =  0.1138E+01 0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01
+mix (4): G =   0.010000, sum(coeff) = -.2749E+01, coeff =  -.5315E+00 -.4081E-01 -.3376E+00 -.1329E+01 -.5103E+00
+mix (5): G =   0.010000, sum(coeff) = -.2749E+01, coeff =  -.5315E+00 -.4081E-01 -.3376E+00 -.1329E+01 -.5103E+00
+mix (6): G =   0.010000, sum(coeff) = -.2749E+01, coeff =  -.5315E+00 -.4081E-01 -.3376E+00 -.1329E+01 -.5103E+00
+mix (7): G =   0.010000, sum(coeff) = -.2749E+01, coeff =  -.5315E+00 -.4081E-01 -.3376E+00 -.1329E+01 -.5103E+00
+mix (0): weights =  0.1138E+01 0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01
+mix (0): G =   0.010000, sum(coeff) = -.2749E+01, coeff =  -.5315E+00 -.4081E-01 -.3376E+00 -.1329E+01 -.5103E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01
+mix (7): G =   0.010000, sum(coeff) = -.4143E+01, coeff =  -.6768E-01 -.3472E+00 -.2520E+01 -.4847E+00 -.7227E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01
+mix (1): G =   0.010000, sum(coeff) = -.4143E+01, coeff =  -.6768E-01 -.3472E+00 -.2520E+01 -.4847E+00 -.7227E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01
+mix (2): G =   0.010000, sum(coeff) = -.4143E+01, coeff =  -.6768E-01 -.3472E+00 -.2520E+01 -.4847E+00 -.7227E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01
+mix (3): G =   0.010000, sum(coeff) = -.4143E+01, coeff =  -.6768E-01 -.3472E+00 -.2520E+01 -.4847E+00 -.7227E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01
+mix (4): G =   0.010000, sum(coeff) = -.4143E+01, coeff =  -.6768E-01 -.3472E+00 -.2520E+01 -.4847E+00 -.7227E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01
+mix (5): G =   0.010000, sum(coeff) = -.4143E+01, coeff =  -.6768E-01 -.3472E+00 -.2520E+01 -.4847E+00 -.7227E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01
+mix (6): G =   0.010000, sum(coeff) = -.4143E+01, coeff =  -.6768E-01 -.3472E+00 -.2520E+01 -.4847E+00 -.7227E+00
+   scf:    7    -2354.230392    -2302.177545    -2302.192285  0.397586 -2.976258 24.986225
+     spin moment: S , {S} =    0.68243   0.68243   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1138E+01 0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01
+mix (0): G =   0.010000, sum(coeff) = -.4143E+01, coeff =  -.6768E-01 -.3472E+00 -.2520E+01 -.4847E+00 -.7227E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01
+mix (6): G =   0.010000, sum(coeff) = -.1782E+01, coeff =  -.3269E+00 -.1499E+01 -.4237E+00 -.5829E+00 0.1051E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01
+mix (7): G =   0.010000, sum(coeff) = -.1782E+01, coeff =  -.3269E+00 -.1499E+01 -.4237E+00 -.5829E+00 0.1051E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01
+mix (1): G =   0.010000, sum(coeff) = -.1782E+01, coeff =  -.3269E+00 -.1499E+01 -.4237E+00 -.5829E+00 0.1051E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01
+mix (2): G =   0.010000, sum(coeff) = -.1782E+01, coeff =  -.3269E+00 -.1499E+01 -.4237E+00 -.5829E+00 0.1051E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01
+mix (3): G =   0.010000, sum(coeff) = -.1782E+01, coeff =  -.3269E+00 -.1499E+01 -.4237E+00 -.5829E+00 0.1051E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01
+mix (4): G =   0.010000, sum(coeff) = -.1782E+01, coeff =  -.3269E+00 -.1499E+01 -.4237E+00 -.5829E+00 0.1051E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01
+mix (5): G =   0.010000, sum(coeff) = -.1782E+01, coeff =  -.3269E+00 -.1499E+01 -.4237E+00 -.5829E+00 0.1051E+01
+   scf:    8    -2298.868571    -2300.537605    -2300.550579  0.020725 -2.799129 25.303781
+     spin moment: S , {S} =    0.66762   0.66762   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1137E+01 0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01
+mix (0): G =   0.010000, sum(coeff) = -.1782E+01, coeff =  -.3269E+00 -.1499E+01 -.4237E+00 -.5829E+00 0.1051E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01
+mix (5): G =   0.010000, sum(coeff) = -.1010E+02, coeff =  0.1419E+01 -.2610E+00 -.1033E+01 -.9547E+01 -.6785E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01
+mix (6): G =   0.010000, sum(coeff) = -.1010E+02, coeff =  0.1419E+01 -.2610E+00 -.1033E+01 -.9547E+01 -.6785E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01
+mix (7): G =   0.010000, sum(coeff) = -.1010E+02, coeff =  0.1419E+01 -.2610E+00 -.1033E+01 -.9547E+01 -.6785E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01
+mix (1): G =   0.010000, sum(coeff) = -.1010E+02, coeff =  0.1419E+01 -.2610E+00 -.1033E+01 -.9547E+01 -.6785E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01
+mix (2): G =   0.010000, sum(coeff) = -.1010E+02, coeff =  0.1419E+01 -.2610E+00 -.1033E+01 -.9547E+01 -.6785E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01
+mix (3): G =   0.010000, sum(coeff) = -.1010E+02, coeff =  0.1419E+01 -.2610E+00 -.1033E+01 -.9547E+01 -.6785E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01
+mix (4): G =   0.010000, sum(coeff) = -.1010E+02, coeff =  0.1419E+01 -.2610E+00 -.1033E+01 -.9547E+01 -.6785E+00
+   scf:    9    -2319.923208    -2310.853148    -2310.893823  0.049520 -2.735607 19.140931
+     spin moment: S , {S} =    0.82497   0.82497   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1137E+01 0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01
+mix (0): G =   0.010000, sum(coeff) = -.1010E+02, coeff =  0.1419E+01 -.2610E+00 -.1033E+01 -.9547E+01 -.6785E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01
+mix (4): G =   0.010000, sum(coeff) = -.5787E+01, coeff =  -.1690E+00 -.4673E+00 -.1915E+01 -.3034E+01 -.2024E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01
+mix (5): G =   0.010000, sum(coeff) = -.5787E+01, coeff =  -.1690E+00 -.4673E+00 -.1915E+01 -.3034E+01 -.2024E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01
+mix (6): G =   0.010000, sum(coeff) = -.5787E+01, coeff =  -.1690E+00 -.4673E+00 -.1915E+01 -.3034E+01 -.2024E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01
+mix (7): G =   0.010000, sum(coeff) = -.5787E+01, coeff =  -.1690E+00 -.4673E+00 -.1915E+01 -.3034E+01 -.2024E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01
+mix (1): G =   0.010000, sum(coeff) = -.5787E+01, coeff =  -.1690E+00 -.4673E+00 -.1915E+01 -.3034E+01 -.2024E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01
+mix (2): G =   0.010000, sum(coeff) = -.5787E+01, coeff =  -.1690E+00 -.4673E+00 -.1915E+01 -.3034E+01 -.2024E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01
+mix (3): G =   0.010000, sum(coeff) = -.5787E+01, coeff =  -.1690E+00 -.4673E+00 -.1915E+01 -.3034E+01 -.2024E+00
+   scf:   10    -2305.780545    -2324.042375    -2324.279780  0.314964 -3.998235  7.635662
+     spin moment: S , {S} =    1.89044   1.89044   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1341E+01 0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01
+mix (0): G =   0.010000, sum(coeff) = -.5787E+01, coeff =  -.1690E+00 -.4673E+00 -.1915E+01 -.3034E+01 -.2024E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01
+mix (3): G =   0.010000, sum(coeff) = -.1215E+02, coeff =  0.1985E+00 -.4200E+01 -.2638E+01 -.2159E+01 -.3347E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01
+mix (4): G =   0.010000, sum(coeff) = -.1215E+02, coeff =  0.1985E+00 -.4200E+01 -.2638E+01 -.2159E+01 -.3347E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01
+mix (5): G =   0.010000, sum(coeff) = -.1215E+02, coeff =  0.1985E+00 -.4200E+01 -.2638E+01 -.2159E+01 -.3347E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01
+mix (6): G =   0.010000, sum(coeff) = -.1215E+02, coeff =  0.1985E+00 -.4200E+01 -.2638E+01 -.2159E+01 -.3347E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01
+mix (7): G =   0.010000, sum(coeff) = -.1215E+02, coeff =  0.1985E+00 -.4200E+01 -.2638E+01 -.2159E+01 -.3347E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01
+mix (1): G =   0.010000, sum(coeff) = -.1215E+02, coeff =  0.1985E+00 -.4200E+01 -.2638E+01 -.2159E+01 -.3347E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01
+mix (2): G =   0.010000, sum(coeff) = -.1215E+02, coeff =  0.1985E+00 -.4200E+01 -.2638E+01 -.2159E+01 -.3347E+01
+   scf:   11    -2280.391251    -2315.046446    -2315.105471  0.279619 -3.620561 18.643019
+     spin moment: S , {S} =    0.90730   0.90730   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1634E+01 0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01
+mix (0): G =   0.010000, sum(coeff) = -.1215E+02, coeff =  0.1985E+00 -.4200E+01 -.2638E+01 -.2159E+01 -.3347E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01
+   scf:   12    -2330.889115    -2325.618441    -2325.766353  0.125703 -3.188123  5.105467
+     spin moment: S , {S} =    1.37323   1.37323   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (1): G =   0.010000, sum(coeff) = -.1907E+02, coeff =  -.5778E+01 -.1587E+01 -.3237E+01 -.5392E+01 -.3080E+01
+mix (2): weights =  0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01
+mix (2): G =   0.010000, sum(coeff) = -.1907E+02, coeff =  -.5778E+01 -.1587E+01 -.3237E+01 -.5392E+01 -.3080E+01
+mix (3): G =   0.010000, sum(coeff) = -.1907E+02, coeff =  -.5778E+01 -.1587E+01 -.3237E+01 -.5392E+01 -.3080E+01
+mix (4): weights =  0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01
+mix (4): G =   0.010000, sum(coeff) = -.1907E+02, coeff =  -.5778E+01 -.1587E+01 -.3237E+01 -.5392E+01 -.3080E+01
+mix (5): G =   0.010000, sum(coeff) = -.1907E+02, coeff =  -.5778E+01 -.1587E+01 -.3237E+01 -.5392E+01 -.3080E+01
+mix (6): weights =  0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01
+mix (6): G =   0.010000, sum(coeff) = -.1907E+02, coeff =  -.5778E+01 -.1587E+01 -.3237E+01 -.5392E+01 -.3080E+01
+mix (7): G =   0.010000, sum(coeff) = -.1907E+02, coeff =  -.5778E+01 -.1587E+01 -.3237E+01 -.5392E+01 -.3080E+01
+mix (0): weights =  0.1625E+01 0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01
+mix (0): G =   0.010000, sum(coeff) = -.1907E+02, coeff =  -.5778E+01 -.1587E+01 -.3237E+01 -.5392E+01 -.3080E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01
+mix (7): G =   0.010000, sum(coeff) = -.2473E+02, coeff =  0.2585E+01 -.3034E+01 -.4549E+01 -.1033E+02 -.9409E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01
+mix (1): G =   0.010000, sum(coeff) = -.2473E+02, coeff =  0.2585E+01 -.3034E+01 -.4549E+01 -.1033E+02 -.9409E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01
+mix (2): G =   0.010000, sum(coeff) = -.2473E+02, coeff =  0.2585E+01 -.3034E+01 -.4549E+01 -.1033E+02 -.9409E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01
+mix (3): G =   0.010000, sum(coeff) = -.2473E+02, coeff =  0.2585E+01 -.3034E+01 -.4549E+01 -.1033E+02 -.9409E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01
+mix (4): G =   0.010000, sum(coeff) = -.2473E+02, coeff =  0.2585E+01 -.3034E+01 -.4549E+01 -.1033E+02 -.9409E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01
+mix (5): G =   0.010000, sum(coeff) = -.2473E+02, coeff =  0.2585E+01 -.3034E+01 -.4549E+01 -.1033E+02 -.9409E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01
+mix (6): G =   0.010000, sum(coeff) = -.2473E+02, coeff =  0.2585E+01 -.3034E+01 -.4549E+01 -.1033E+02 -.9409E+01
+   scf:   13    -2306.216227    -2317.704167    -2317.777340  0.108489 -3.418079 15.919356
+     spin moment: S , {S} =    0.98652   0.98652   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1863E+01 0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01
+mix (0): G =   0.010000, sum(coeff) = -.2473E+02, coeff =  0.2585E+01 -.3034E+01 -.4549E+01 -.1033E+02 -.9409E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02
+mix (6): G =   0.010000, sum(coeff) = 0.1750E+02, coeff =  -.5410E+00 -.1036E+01 0.5138E+01 0.1175E+02 0.2193E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02
+mix (7): G =   0.010000, sum(coeff) = 0.1750E+02, coeff =  -.5410E+00 -.1036E+01 0.5138E+01 0.1175E+02 0.2193E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02
+mix (1): G =   0.010000, sum(coeff) = 0.1750E+02, coeff =  -.5410E+00 -.1036E+01 0.5138E+01 0.1175E+02 0.2193E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02
+mix (2): G =   0.010000, sum(coeff) = 0.1750E+02, coeff =  -.5410E+00 -.1036E+01 0.5138E+01 0.1175E+02 0.2193E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02
+mix (3): G =   0.010000, sum(coeff) = 0.1750E+02, coeff =  -.5410E+00 -.1036E+01 0.5138E+01 0.1175E+02 0.2193E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02
+mix (4): G =   0.010000, sum(coeff) = 0.1750E+02, coeff =  -.5410E+00 -.1036E+01 0.5138E+01 0.1175E+02 0.2193E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02
+mix (5): G =   0.010000, sum(coeff) = 0.1750E+02, coeff =  -.5410E+00 -.1036E+01 0.5138E+01 0.1175E+02 0.2193E+01
+   scf:   14    -2323.304645    -2326.680422    -2326.867199  0.218871 -3.409258  3.157328
+     spin moment: S , {S} =    1.63817   1.63817   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.3720E+01 0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02
+mix (0): G =   0.010000, sum(coeff) = 0.1750E+02, coeff =  -.5410E+00 -.1036E+01 0.5138E+01 0.1175E+02 0.2193E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01
+mix (5): G =   0.010000, sum(coeff) = 0.1879E+02, coeff =  -.3955E+00 0.3855E+01 0.4524E+01 0.3216E+01 0.7586E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01
+mix (6): G =   0.010000, sum(coeff) = 0.1879E+02, coeff =  -.3955E+00 0.3855E+01 0.4524E+01 0.3216E+01 0.7586E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01
+mix (7): G =   0.010000, sum(coeff) = 0.1879E+02, coeff =  -.3955E+00 0.3855E+01 0.4524E+01 0.3216E+01 0.7586E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01
+mix (1): G =   0.010000, sum(coeff) = 0.1879E+02, coeff =  -.3955E+00 0.3855E+01 0.4524E+01 0.3216E+01 0.7586E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01
+mix (2): G =   0.010000, sum(coeff) = 0.1879E+02, coeff =  -.3955E+00 0.3855E+01 0.4524E+01 0.3216E+01 0.7586E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01
+mix (3): G =   0.010000, sum(coeff) = 0.1879E+02, coeff =  -.3955E+00 0.3855E+01 0.4524E+01 0.3216E+01 0.7586E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01
+mix (4): G =   0.010000, sum(coeff) = 0.1879E+02, coeff =  -.3955E+00 0.3855E+01 0.4524E+01 0.3216E+01 0.7586E+01
+   scf:   15    -2321.851618    -2325.637061    -2325.778561  0.105732 -3.461899  5.941174
+     spin moment: S , {S} =    1.33674   1.33674   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1891E+01 0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01
+mix (0): G =   0.010000, sum(coeff) = 0.1879E+02, coeff =  -.3955E+00 0.3855E+01 0.4524E+01 0.3216E+01 0.7586E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01
+mix (4): G =   0.010000, sum(coeff) = 0.1442E+01, coeff =  0.4438E+00 0.3031E+00 -.4290E+00 0.1060E+01 0.6386E-01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01
+mix (5): G =   0.010000, sum(coeff) = 0.1442E+01, coeff =  0.4438E+00 0.3031E+00 -.4290E+00 0.1060E+01 0.6386E-01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01
+mix (6): G =   0.010000, sum(coeff) = 0.1442E+01, coeff =  0.4438E+00 0.3031E+00 -.4290E+00 0.1060E+01 0.6386E-01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01
+mix (7): G =   0.010000, sum(coeff) = 0.1442E+01, coeff =  0.4438E+00 0.3031E+00 -.4290E+00 0.1060E+01 0.6386E-01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01
+mix (1): G =   0.010000, sum(coeff) = 0.1442E+01, coeff =  0.4438E+00 0.3031E+00 -.4290E+00 0.1060E+01 0.6386E-01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01
+mix (2): G =   0.010000, sum(coeff) = 0.1442E+01, coeff =  0.4438E+00 0.3031E+00 -.4290E+00 0.1060E+01 0.6386E-01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01
+mix (3): G =   0.010000, sum(coeff) = 0.1442E+01, coeff =  0.4438E+00 0.3031E+00 -.4290E+00 0.1060E+01 0.6386E-01
+   scf:   16    -2300.809473    -2320.164709    -2320.363042  0.219762 -3.526720 13.817286
+     spin moment: S , {S} =    1.77106   1.77106   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.5688E+01 0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01
+mix (0): G =   0.010000, sum(coeff) = 0.1442E+01, coeff =  0.4438E+00 0.3031E+00 -.4290E+00 0.1060E+01 0.6386E-01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02
+mix (3): G =   0.010000, sum(coeff) = -.7760E+00, coeff =  0.5090E+00 -.3367E+00 -.1354E+01 0.1742E+00 0.2319E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02
+mix (4): G =   0.010000, sum(coeff) = -.7760E+00, coeff =  0.5090E+00 -.3367E+00 -.1354E+01 0.1742E+00 0.2319E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02
+mix (5): G =   0.010000, sum(coeff) = -.7760E+00, coeff =  0.5090E+00 -.3367E+00 -.1354E+01 0.1742E+00 0.2319E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02
+mix (6): G =   0.010000, sum(coeff) = -.7760E+00, coeff =  0.5090E+00 -.3367E+00 -.1354E+01 0.1742E+00 0.2319E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02
+mix (7): G =   0.010000, sum(coeff) = -.7760E+00, coeff =  0.5090E+00 -.3367E+00 -.1354E+01 0.1742E+00 0.2319E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02
+mix (1): G =   0.010000, sum(coeff) = -.7760E+00, coeff =  0.5090E+00 -.3367E+00 -.1354E+01 0.1742E+00 0.2319E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02
+mix (2): G =   0.010000, sum(coeff) = -.7760E+00, coeff =  0.5090E+00 -.3367E+00 -.1354E+01 0.1742E+00 0.2319E+00
+   scf:   17    -2326.593330    -2327.017157    -2327.175961  0.166686 -3.431236  0.534820
+     spin moment: S , {S} =    1.47744   1.47744   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.2075E+01 0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02
+mix (0): G =   0.010000, sum(coeff) = -.7760E+00, coeff =  0.5090E+00 -.3367E+00 -.1354E+01 0.1742E+00 0.2319E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02
+mix (2): G =   0.010000, sum(coeff) = -.3224E+01, coeff =  -.7367E+00 -.2516E+00 0.2051E+00 -.4409E+00 -.1999E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02
+mix (3): G =   0.010000, sum(coeff) = -.3224E+01, coeff =  -.7367E+00 -.2516E+00 0.2051E+00 -.4409E+00 -.1999E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02
+mix (4): G =   0.010000, sum(coeff) = -.3224E+01, coeff =  -.7367E+00 -.2516E+00 0.2051E+00 -.4409E+00 -.1999E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02
+mix (5): G =   0.010000, sum(coeff) = -.3224E+01, coeff =  -.7367E+00 -.2516E+00 0.2051E+00 -.4409E+00 -.1999E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02
+mix (6): G =   0.010000, sum(coeff) = -.3224E+01, coeff =  -.7367E+00 -.2516E+00 0.2051E+00 -.4409E+00 -.1999E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02
+mix (7): G =   0.010000, sum(coeff) = -.3224E+01, coeff =  -.7367E+00 -.2516E+00 0.2051E+00 -.4409E+00 -.1999E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02
+mix (1): G =   0.010000, sum(coeff) = -.3224E+01, coeff =  -.7367E+00 -.2516E+00 0.2051E+00 -.4409E+00 -.1999E+01
+   scf:   18    -2326.499275    -2326.817886    -2326.967437  0.024112 -3.440446  2.441199
+     spin moment: S , {S} =    1.42141   1.42141   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1012E+02 0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02
+mix (0): G =   0.010000, sum(coeff) = -.3224E+01, coeff =  -.7367E+00 -.2516E+00 0.2051E+00 -.4409E+00 -.1999E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02
+   scf:   19    -2326.837835    -2326.827969    -2326.977241  0.003263 -3.425526  2.339928
+     spin moment: S , {S} =    1.41628   1.41628   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.4810E+01 0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02
+mix (7): G =   0.010000, sum(coeff) = 0.2120E+01, coeff =  -.6753E-01 0.1877E-01 -.2805E+00 0.1461E+01 0.9878E+00
+mix (1): G =   0.010000, sum(coeff) = 0.2120E+01, coeff =  -.6753E-01 0.1877E-01 -.2805E+00 0.1461E+01 0.9878E+00
+mix (2): G =   0.010000, sum(coeff) = 0.2120E+01, coeff =  -.6753E-01 0.1877E-01 -.2805E+00 0.1461E+01 0.9878E+00
+mix (3): G =   0.010000, sum(coeff) = 0.2120E+01, coeff =  -.6753E-01 0.1877E-01 -.2805E+00 0.1461E+01 0.9878E+00
+mix (4): G =   0.010000, sum(coeff) = 0.2120E+01, coeff =  -.6753E-01 0.1877E-01 -.2805E+00 0.1461E+01 0.9878E+00
+mix (5): G =   0.010000, sum(coeff) = 0.2120E+01, coeff =  -.6753E-01 0.1877E-01 -.2805E+00 0.1461E+01 0.9878E+00
+mix (6): G =   0.010000, sum(coeff) = 0.2120E+01, coeff =  -.6753E-01 0.1877E-01 -.2805E+00 0.1461E+01 0.9878E+00
+mix (0): G =   0.010000, sum(coeff) = 0.2120E+01, coeff =  -.6753E-01 0.1877E-01 -.2805E+00 0.1461E+01 0.9878E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03
+   scf:   20    -2327.019314    -2327.029188    -2327.190934  0.028237 -3.440396  0.119559
+     spin moment: S , {S} =    1.49791   1.49791   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (5): G =   0.010000, sum(coeff) = -.1183E+02, coeff =  0.1720E+00 -.5638E+00 -.1835E+01 -.3566E+01 -.6037E+01
+mix (6): weights =  0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03
+mix (6): G =   0.010000, sum(coeff) = -.1183E+02, coeff =  0.1720E+00 -.5638E+00 -.1835E+01 -.3566E+01 -.6037E+01
+mix (7): G =   0.010000, sum(coeff) = -.1183E+02, coeff =  0.1720E+00 -.5638E+00 -.1835E+01 -.3566E+01 -.6037E+01
+mix (1): G =   0.010000, sum(coeff) = -.1183E+02, coeff =  0.1720E+00 -.5638E+00 -.1835E+01 -.3566E+01 -.6037E+01
+mix (2): weights =  0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03
+mix (2): G =   0.010000, sum(coeff) = -.1183E+02, coeff =  0.1720E+00 -.5638E+00 -.1835E+01 -.3566E+01 -.6037E+01
+mix (3): G =   0.010000, sum(coeff) = -.1183E+02, coeff =  0.1720E+00 -.5638E+00 -.1835E+01 -.3566E+01 -.6037E+01
+mix (4): weights =  0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03
+mix (4): G =   0.010000, sum(coeff) = -.1183E+02, coeff =  0.1720E+00 -.5638E+00 -.1835E+01 -.3566E+01 -.6037E+01
+mix (0): weights =  0.2277E+01 0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03
+mix (0): G =   0.010000, sum(coeff) = -.1183E+02, coeff =  0.1720E+00 -.5638E+00 -.1835E+01 -.3566E+01 -.6037E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02
+mix (4): G =   0.010000, sum(coeff) = 0.1889E+02, coeff =  -.8081E+00 0.7541E+01 0.5490E+01 0.4741E+00 0.6188E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02
+mix (5): G =   0.010000, sum(coeff) = 0.1889E+02, coeff =  -.8081E+00 0.7541E+01 0.5490E+01 0.4741E+00 0.6188E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02
+mix (6): G =   0.010000, sum(coeff) = 0.1889E+02, coeff =  -.8081E+00 0.7541E+01 0.5490E+01 0.4741E+00 0.6188E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02
+mix (7): G =   0.010000, sum(coeff) = 0.1889E+02, coeff =  -.8081E+00 0.7541E+01 0.5490E+01 0.4741E+00 0.6188E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02
+mix (1): G =   0.010000, sum(coeff) = 0.1889E+02, coeff =  -.8081E+00 0.7541E+01 0.5490E+01 0.4741E+00 0.6188E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02
+mix (2): G =   0.010000, sum(coeff) = 0.1889E+02, coeff =  -.8081E+00 0.7541E+01 0.5490E+01 0.4741E+00 0.6188E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02
+mix (3): G =   0.010000, sum(coeff) = 0.1889E+02, coeff =  -.8081E+00 0.7541E+01 0.5490E+01 0.4741E+00 0.6188E+01
+   scf:   21    -2327.026878    -2327.028240    -2327.190633  0.002040 -3.432670  0.234096
+     spin moment: S , {S} =    1.50258   1.50258   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.6528E+02 0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02
+mix (0): G =   0.010000, sum(coeff) = 0.1889E+02, coeff =  -.8081E+00 0.7541E+01 0.5490E+01 0.4741E+00 0.6188E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1373E+02, coeff =  -.1731E+00 0.1029E+01 0.8083E+00 -.7435E+01 0.1950E+02
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1373E+02, coeff =  -.1731E+00 0.1029E+01 0.8083E+00 -.7435E+01 0.1950E+02
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1373E+02, coeff =  -.1731E+00 0.1029E+01 0.8083E+00 -.7435E+01 0.1950E+02
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1373E+02, coeff =  -.1731E+00 0.1029E+01 0.8083E+00 -.7435E+01 0.1950E+02
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1373E+02, coeff =  -.1731E+00 0.1029E+01 0.8083E+00 -.7435E+01 0.1950E+02
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1373E+02, coeff =  -.1731E+00 0.1029E+01 0.8083E+00 -.7435E+01 0.1950E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1373E+02, coeff =  -.1731E+00 0.1029E+01 0.8083E+00 -.7435E+01 0.1950E+02
+   scf:   22    -2327.029302    -2327.028882    -2327.191749  0.001119 -3.433011  0.155293
+     spin moment: S , {S} =    1.50955   1.50955   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1395E+02 0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1373E+02, coeff =  -.1731E+00 0.1029E+01 0.8083E+00 -.7435E+01 0.1950E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03
+mix (2): G =   0.010000, sum(coeff) = 0.4137E+01, coeff =  0.4191E+00 0.2673E+00 -.2460E+01 0.6238E+01 -.3282E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03
+mix (3): G =   0.010000, sum(coeff) = 0.4137E+01, coeff =  0.4191E+00 0.2673E+00 -.2460E+01 0.6238E+01 -.3282E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03
+mix (4): G =   0.010000, sum(coeff) = 0.4137E+01, coeff =  0.4191E+00 0.2673E+00 -.2460E+01 0.6238E+01 -.3282E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03
+mix (5): G =   0.010000, sum(coeff) = 0.4137E+01, coeff =  0.4191E+00 0.2673E+00 -.2460E+01 0.6238E+01 -.3282E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03
+mix (6): G =   0.010000, sum(coeff) = 0.4137E+01, coeff =  0.4191E+00 0.2673E+00 -.2460E+01 0.6238E+01 -.3282E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03
+mix (7): G =   0.010000, sum(coeff) = 0.4137E+01, coeff =  0.4191E+00 0.2673E+00 -.2460E+01 0.6238E+01 -.3282E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03
+mix (1): G =   0.010000, sum(coeff) = 0.4137E+01, coeff =  0.4191E+00 0.2673E+00 -.2460E+01 0.6238E+01 -.3282E+00
+   scf:   23    -2327.011704    -2327.018521    -2327.195924  0.019214 -3.492701  0.128818
+     spin moment: S , {S} =    1.66971   1.66971   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1471E+02 0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03
+mix (0): G =   0.010000, sum(coeff) = 0.4137E+01, coeff =  0.4191E+00 0.2673E+00 -.2460E+01 0.6238E+01 -.3282E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1812E+02, coeff =  0.6839E+00 -.1049E+01 0.6286E+01 -.2232E+00 0.1242E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1812E+02, coeff =  0.6839E+00 -.1049E+01 0.6286E+01 -.2232E+00 0.1242E+02
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1812E+02, coeff =  0.6839E+00 -.1049E+01 0.6286E+01 -.2232E+00 0.1242E+02
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1812E+02, coeff =  0.6839E+00 -.1049E+01 0.6286E+01 -.2232E+00 0.1242E+02
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1812E+02, coeff =  0.6839E+00 -.1049E+01 0.6286E+01 -.2232E+00 0.1242E+02
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1812E+02, coeff =  0.6839E+00 -.1049E+01 0.6286E+01 -.2232E+00 0.1242E+02
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1812E+02, coeff =  0.6839E+00 -.1049E+01 0.6286E+01 -.2232E+00 0.1242E+02
+   scf:   24    -2327.020572    -2327.019676    -2327.196498  0.001123 -3.491970  0.048028
+     spin moment: S , {S} =    1.66520   1.66520   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1202E+03 0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1812E+02, coeff =  0.6839E+00 -.1049E+01 0.6286E+01 -.2232E+00 0.1242E+02
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03
+mix (7): G =   0.010000, sum(coeff) = 0.2889E+00, coeff =  -.3609E-01 0.2166E+00 -.1628E-01 0.1752E-02 0.1230E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03
+mix (1): G =   0.010000, sum(coeff) = 0.2889E+00, coeff =  -.3609E-01 0.2166E+00 -.1628E-01 0.1752E-02 0.1230E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03
+mix (2): G =   0.010000, sum(coeff) = 0.2889E+00, coeff =  -.3609E-01 0.2166E+00 -.1628E-01 0.1752E-02 0.1230E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03
+mix (3): G =   0.010000, sum(coeff) = 0.2889E+00, coeff =  -.3609E-01 0.2166E+00 -.1628E-01 0.1752E-02 0.1230E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03
+mix (4): G =   0.010000, sum(coeff) = 0.2889E+00, coeff =  -.3609E-01 0.2166E+00 -.1628E-01 0.1752E-02 0.1230E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03
+mix (5): G =   0.010000, sum(coeff) = 0.2889E+00, coeff =  -.3609E-01 0.2166E+00 -.1628E-01 0.1752E-02 0.1230E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03
+mix (6): G =   0.010000, sum(coeff) = 0.2889E+00, coeff =  -.3609E-01 0.2166E+00 -.1628E-01 0.1752E-02 0.1230E+00
+   scf:   25    -2327.020810    -2327.020249    -2327.196700  0.000778 -3.491109  0.031774
+     spin moment: S , {S} =    1.66414   1.66414   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.9988E+02 0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03
+mix (0): G =   0.010000, sum(coeff) = 0.2889E+00, coeff =  -.3609E-01 0.2166E+00 -.1628E-01 0.1752E-02 0.1230E+00
+   scf:   26    -2327.020765    -2327.020518    -2327.196756  0.000404 -3.490290  0.019860
+     spin moment: S , {S} =    1.66273   1.66273   0.00000   0.00000
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1918E+02, coeff =  -.5004E+01 0.3709E+00 -.2977E+01 -.3921E+01 0.3071E+02
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1918E+02, coeff =  -.5004E+01 0.3709E+00 -.2977E+01 -.3921E+01 0.3071E+02
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1918E+02, coeff =  -.5004E+01 0.3709E+00 -.2977E+01 -.3921E+01 0.3071E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1918E+02, coeff =  -.5004E+01 0.3709E+00 -.2977E+01 -.3921E+01 0.3071E+02
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1918E+02, coeff =  -.5004E+01 0.3709E+00 -.2977E+01 -.3921E+01 0.3071E+02
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1918E+02, coeff =  -.5004E+01 0.3709E+00 -.2977E+01 -.3921E+01 0.3071E+02
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1918E+02, coeff =  -.5004E+01 0.3709E+00 -.2977E+01 -.3921E+01 0.3071E+02
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1133E+03 0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1918E+02, coeff =  -.5004E+01 0.3709E+00 -.2977E+01 -.3921E+01 0.3071E+02
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1360E+00, coeff =  -.1865E-02 -.5945E+00 -.3303E-01 0.5441E+00 0.2212E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1360E+00, coeff =  -.1865E-02 -.5945E+00 -.3303E-01 0.5441E+00 0.2212E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1360E+00, coeff =  -.1865E-02 -.5945E+00 -.3303E-01 0.5441E+00 0.2212E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1360E+00, coeff =  -.1865E-02 -.5945E+00 -.3303E-01 0.5441E+00 0.2212E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1360E+00, coeff =  -.1865E-02 -.5945E+00 -.3303E-01 0.5441E+00 0.2212E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1360E+00, coeff =  -.1865E-02 -.5945E+00 -.3303E-01 0.5441E+00 0.2212E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1360E+00, coeff =  -.1865E-02 -.5945E+00 -.3303E-01 0.5441E+00 0.2212E+00
+   scf:   27    -2327.021380    -2327.020971    -2327.196907  0.001276 -3.491333  0.044597
+     spin moment: S , {S} =    1.66371   1.66371   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1184E+03 0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1360E+00, coeff =  -.1865E-02 -.5945E+00 -.3303E-01 0.5441E+00 0.2212E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03
+mix (4): G =   0.010000, sum(coeff) = 0.3188E+02, coeff =  0.2526E+02 0.1961E+01 -.2781E+02 -.8807E+01 0.4128E+02
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03
+mix (5): G =   0.010000, sum(coeff) = 0.3188E+02, coeff =  0.2526E+02 0.1961E+01 -.2781E+02 -.8807E+01 0.4128E+02
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03
+mix (6): G =   0.010000, sum(coeff) = 0.3188E+02, coeff =  0.2526E+02 0.1961E+01 -.2781E+02 -.8807E+01 0.4128E+02
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03
+mix (7): G =   0.010000, sum(coeff) = 0.3188E+02, coeff =  0.2526E+02 0.1961E+01 -.2781E+02 -.8807E+01 0.4128E+02
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03
+mix (1): G =   0.010000, sum(coeff) = 0.3188E+02, coeff =  0.2526E+02 0.1961E+01 -.2781E+02 -.8807E+01 0.4128E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03
+mix (2): G =   0.010000, sum(coeff) = 0.3188E+02, coeff =  0.2526E+02 0.1961E+01 -.2781E+02 -.8807E+01 0.4128E+02
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03
+mix (3): G =   0.010000, sum(coeff) = 0.3188E+02, coeff =  0.2526E+02 0.1961E+01 -.2781E+02 -.8807E+01 0.4128E+02
+   scf:   28    -2327.020772    -2327.020887    -2327.196970  0.000314 -3.491423  0.014315
+     spin moment: S , {S} =    1.66574   1.66574   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1361E+03 0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03
+mix (0): G =   0.010000, sum(coeff) = 0.3188E+02, coeff =  0.2526E+02 0.1961E+01 -.2781E+02 -.8807E+01 0.4128E+02
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03
+mix (3): G =   0.010000, sum(coeff) = 0.6434E+00, coeff =  -.2996E-01 0.3088E-01 0.1230E-01 -.1265E-01 0.6429E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03
+mix (4): G =   0.010000, sum(coeff) = 0.6434E+00, coeff =  -.2996E-01 0.3088E-01 0.1230E-01 -.1265E-01 0.6429E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03
+mix (5): G =   0.010000, sum(coeff) = 0.6434E+00, coeff =  -.2996E-01 0.3088E-01 0.1230E-01 -.1265E-01 0.6429E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03
+mix (6): G =   0.010000, sum(coeff) = 0.6434E+00, coeff =  -.2996E-01 0.3088E-01 0.1230E-01 -.1265E-01 0.6429E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03
+mix (7): G =   0.010000, sum(coeff) = 0.6434E+00, coeff =  -.2996E-01 0.3088E-01 0.1230E-01 -.1265E-01 0.6429E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03
+mix (1): G =   0.010000, sum(coeff) = 0.6434E+00, coeff =  -.2996E-01 0.3088E-01 0.1230E-01 -.1265E-01 0.6429E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03
+mix (2): G =   0.010000, sum(coeff) = 0.6434E+00, coeff =  -.2996E-01 0.3088E-01 0.1230E-01 -.1265E-01 0.6429E+00
+   scf:   29    -2327.023398    -2327.022113    -2327.197220  0.001512 -3.488703  0.009683
+     spin moment: S , {S} =    1.66366   1.66366   0.00000   0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1401E+03 0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03
+mix (0): G =   0.010000, sum(coeff) = 0.6434E+00, coeff =  -.2996E-01 0.3088E-01 0.1230E-01 -.1265E-01 0.6429E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1886E+01, coeff =  -.7038E+00 0.1733E+00 -.9646E+00 -.5968E+01 0.9349E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1886E+01, coeff =  -.7038E+00 0.1733E+00 -.9646E+00 -.5968E+01 0.9349E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1886E+01, coeff =  -.7038E+00 0.1733E+00 -.9646E+00 -.5968E+01 0.9349E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1886E+01, coeff =  -.7038E+00 0.1733E+00 -.9646E+00 -.5968E+01 0.9349E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1886E+01, coeff =  -.7038E+00 0.1733E+00 -.9646E+00 -.5968E+01 0.9349E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1886E+01, coeff =  -.7038E+00 0.1733E+00 -.9646E+00 -.5968E+01 0.9349E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1886E+01, coeff =  -.7038E+00 0.1733E+00 -.9646E+00 -.5968E+01 0.9349E+01
+   scf:   30    -2327.023577    -2327.022833    -2327.197319  0.000984 -3.486981  0.008519
+     spin moment: S , {S} =    1.66249   1.66249   0.00000   0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1431E+03 0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1886E+01, coeff =  -.7038E+00 0.1733E+00 -.9646E+00 -.5968E+01 0.9349E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03
+mix (1): G =   0.010000, sum(coeff) = 0.6234E+00, coeff =  -.8453E-01 0.4364E+00 0.1219E+01 -.1938E+01 0.9911E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03
+mix (2): G =   0.010000, sum(coeff) = 0.6234E+00, coeff =  -.8453E-01 0.4364E+00 0.1219E+01 -.1938E+01 0.9911E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03
+mix (3): G =   0.010000, sum(coeff) = 0.6234E+00, coeff =  -.8453E-01 0.4364E+00 0.1219E+01 -.1938E+01 0.9911E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03
+mix (4): G =   0.010000, sum(coeff) = 0.6234E+00, coeff =  -.8453E-01 0.4364E+00 0.1219E+01 -.1938E+01 0.9911E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03
+mix (5): G =   0.010000, sum(coeff) = 0.6234E+00, coeff =  -.8453E-01 0.4364E+00 0.1219E+01 -.1938E+01 0.9911E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03
+mix (6): G =   0.010000, sum(coeff) = 0.6234E+00, coeff =  -.8453E-01 0.4364E+00 0.1219E+01 -.1938E+01 0.9911E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03
+mix (7): G =   0.010000, sum(coeff) = 0.6234E+00, coeff =  -.8453E-01 0.4364E+00 0.1219E+01 -.1938E+01 0.9911E+00
+   scf:   31    -2327.022846    -2327.022840    -2327.197330  0.000296 -3.487881  0.008478
+     spin moment: S , {S} =    1.66432   1.66432   0.00000  -0.00003
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1369E+03 0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03
+mix (0): G =   0.010000, sum(coeff) = 0.6234E+00, coeff =  -.8453E-01 0.4364E+00 0.1219E+01 -.1938E+01 0.9911E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (7): G =   0.010000, sum(coeff) = -.1001E+00, coeff =  -.2355E+00 0.7349E+00 -.1125E+01 -.1774E+00 0.7030E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (1): G =   0.010000, sum(coeff) = -.1001E+00, coeff =  -.2355E+00 0.7349E+00 -.1125E+01 -.1774E+00 0.7030E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (2): G =   0.010000, sum(coeff) = -.1001E+00, coeff =  -.2355E+00 0.7349E+00 -.1125E+01 -.1774E+00 0.7030E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (3): G =   0.010000, sum(coeff) = -.1001E+00, coeff =  -.2355E+00 0.7349E+00 -.1125E+01 -.1774E+00 0.7030E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (4): G =   0.010000, sum(coeff) = -.1001E+00, coeff =  -.2355E+00 0.7349E+00 -.1125E+01 -.1774E+00 0.7030E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (5): G =   0.010000, sum(coeff) = -.1001E+00, coeff =  -.2355E+00 0.7349E+00 -.1125E+01 -.1774E+00 0.7030E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (6): G =   0.010000, sum(coeff) = -.1001E+00, coeff =  -.2355E+00 0.7349E+00 -.1125E+01 -.1774E+00 0.7030E+00
+   scf:   32    -2327.022648    -2327.022745    -2327.197342  0.000267 -3.488746  0.008423
+     spin moment: S , {S} =    1.66672   1.66672   0.00000  -0.00002
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1446E+03 0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (0): G =   0.010000, sum(coeff) = -.1001E+00, coeff =  -.2355E+00 0.7349E+00 -.1125E+01 -.1774E+00 0.7030E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1536E+01, coeff =  -.1154E+01 0.1804E+01 -.5313E-01 -.5239E+00 0.1463E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1536E+01, coeff =  -.1154E+01 0.1804E+01 -.5313E-01 -.5239E+00 0.1463E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1536E+01, coeff =  -.1154E+01 0.1804E+01 -.5313E-01 -.5239E+00 0.1463E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1536E+01, coeff =  -.1154E+01 0.1804E+01 -.5313E-01 -.5239E+00 0.1463E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1536E+01, coeff =  -.1154E+01 0.1804E+01 -.5313E-01 -.5239E+00 0.1463E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1536E+01, coeff =  -.1154E+01 0.1804E+01 -.5313E-01 -.5239E+00 0.1463E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1536E+01, coeff =  -.1154E+01 0.1804E+01 -.5313E-01 -.5239E+00 0.1463E+01
+   scf:   33    -2327.022705    -2327.022725    -2327.197344  0.000107 -3.489113  0.008425
+     spin moment: S , {S} =    1.66752   1.66752   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1458E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1536E+01, coeff =  -.1154E+01 0.1804E+01 -.5313E-01 -.5239E+00 0.1463E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (5): G =   0.010000, sum(coeff) = 0.8481E+00, coeff =  -.5226E-02 -.4498E-01 0.5130E+00 -.1985E+01 0.2370E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (6): G =   0.010000, sum(coeff) = 0.8481E+00, coeff =  -.5226E-02 -.4498E-01 0.5130E+00 -.1985E+01 0.2370E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (7): G =   0.010000, sum(coeff) = 0.8481E+00, coeff =  -.5226E-02 -.4498E-01 0.5130E+00 -.1985E+01 0.2370E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (1): G =   0.010000, sum(coeff) = 0.8481E+00, coeff =  -.5226E-02 -.4498E-01 0.5130E+00 -.1985E+01 0.2370E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (2): G =   0.010000, sum(coeff) = 0.8481E+00, coeff =  -.5226E-02 -.4498E-01 0.5130E+00 -.1985E+01 0.2370E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (3): G =   0.010000, sum(coeff) = 0.8481E+00, coeff =  -.5226E-02 -.4498E-01 0.5130E+00 -.1985E+01 0.2370E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (4): G =   0.010000, sum(coeff) = 0.8481E+00, coeff =  -.5226E-02 -.4498E-01 0.5130E+00 -.1985E+01 0.2370E+01
+   scf:   34    -2327.022754    -2327.022739    -2327.197347  0.000074 -3.489206  0.008411
+     spin moment: S , {S} =    1.66800   1.66800   0.00000   0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03
+mix (0): G =   0.010000, sum(coeff) = 0.8481E+00, coeff =  -.5226E-02 -.4498E-01 0.5130E+00 -.1985E+01 0.2370E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03
+mix (4): G =   0.010000, sum(coeff) = 0.3965E+00, coeff =  0.2908E+00 -.1247E+01 0.4243E+01 -.5104E+01 0.2213E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03
+mix (5): G =   0.010000, sum(coeff) = 0.3965E+00, coeff =  0.2908E+00 -.1247E+01 0.4243E+01 -.5104E+01 0.2213E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03
+mix (6): G =   0.010000, sum(coeff) = 0.3965E+00, coeff =  0.2908E+00 -.1247E+01 0.4243E+01 -.5104E+01 0.2213E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03
+mix (7): G =   0.010000, sum(coeff) = 0.3965E+00, coeff =  0.2908E+00 -.1247E+01 0.4243E+01 -.5104E+01 0.2213E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03
+mix (1): G =   0.010000, sum(coeff) = 0.3965E+00, coeff =  0.2908E+00 -.1247E+01 0.4243E+01 -.5104E+01 0.2213E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03
+mix (2): G =   0.010000, sum(coeff) = 0.3965E+00, coeff =  0.2908E+00 -.1247E+01 0.4243E+01 -.5104E+01 0.2213E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03
+mix (3): G =   0.010000, sum(coeff) = 0.3965E+00, coeff =  0.2908E+00 -.1247E+01 0.4243E+01 -.5104E+01 0.2213E+01
+   scf:   35    -2327.022779    -2327.022759    -2327.197357  0.000093 -3.489125  0.008333
+     spin moment: S , {S} =    1.66893   1.66893   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03
+mix (0): G =   0.010000, sum(coeff) = 0.3965E+00, coeff =  0.2908E+00 -.1247E+01 0.4243E+01 -.5104E+01 0.2213E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03
+mix (3): G =   0.010000, sum(coeff) = 0.8566E+01, coeff =  -.8033E+00 0.5368E+01 -.4871E+01 -.1277E+01 0.1015E+02
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03
+mix (4): G =   0.010000, sum(coeff) = 0.8566E+01, coeff =  -.8033E+00 0.5368E+01 -.4871E+01 -.1277E+01 0.1015E+02
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03
+mix (5): G =   0.010000, sum(coeff) = 0.8566E+01, coeff =  -.8033E+00 0.5368E+01 -.4871E+01 -.1277E+01 0.1015E+02
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03
+mix (6): G =   0.010000, sum(coeff) = 0.8566E+01, coeff =  -.8033E+00 0.5368E+01 -.4871E+01 -.1277E+01 0.1015E+02
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03
+mix (7): G =   0.010000, sum(coeff) = 0.8566E+01, coeff =  -.8033E+00 0.5368E+01 -.4871E+01 -.1277E+01 0.1015E+02
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03
+mix (1): G =   0.010000, sum(coeff) = 0.8566E+01, coeff =  -.8033E+00 0.5368E+01 -.4871E+01 -.1277E+01 0.1015E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03
+mix (2): G =   0.010000, sum(coeff) = 0.8566E+01, coeff =  -.8033E+00 0.5368E+01 -.4871E+01 -.1277E+01 0.1015E+02
+   scf:   36    -2327.022775    -2327.022767    -2327.197365  0.000054 -3.489226  0.008280
+     spin moment: S , {S} =    1.66967   1.66967   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1461E+03 0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03
+mix (0): G =   0.010000, sum(coeff) = 0.8566E+01, coeff =  -.8033E+00 0.5368E+01 -.4871E+01 -.1277E+01 0.1015E+02
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03
+   scf:   37    -2327.022670    -2327.022716    -2327.197416  0.000684 -3.491198  0.007951
+     spin moment: S , {S} =    1.67614   1.67614   0.00000   0.00003
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1461E+03 0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03
+mix (1): G =   0.010000, sum(coeff) = -.4849E+01, coeff =  -.9150E+00 0.9750E+00 0.1765E+01 -.7928E+01 0.1255E+01
+mix (2): G =   0.010000, sum(coeff) = -.4849E+01, coeff =  -.9150E+00 0.9750E+00 0.1765E+01 -.7928E+01 0.1255E+01
+mix (3): G =   0.010000, sum(coeff) = -.4849E+01, coeff =  -.9150E+00 0.9750E+00 0.1765E+01 -.7928E+01 0.1255E+01
+mix (4): G =   0.010000, sum(coeff) = -.4849E+01, coeff =  -.9150E+00 0.9750E+00 0.1765E+01 -.7928E+01 0.1255E+01
+mix (5): G =   0.010000, sum(coeff) = -.4849E+01, coeff =  -.9150E+00 0.9750E+00 0.1765E+01 -.7928E+01 0.1255E+01
+mix (6): G =   0.010000, sum(coeff) = -.4849E+01, coeff =  -.9150E+00 0.9750E+00 0.1765E+01 -.7928E+01 0.1255E+01
+mix (7): G =   0.010000, sum(coeff) = -.4849E+01, coeff =  -.9150E+00 0.9750E+00 0.1765E+01 -.7928E+01 0.1255E+01
+mix (0): G =   0.010000, sum(coeff) = -.4849E+01, coeff =  -.9150E+00 0.9750E+00 0.1765E+01 -.7928E+01 0.1255E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03
+mix (7): G =   0.010000, sum(coeff) = 0.2631E+01, coeff =  -.3230E+00 0.5714E-01 0.1139E+01 -.1332E+01 0.3090E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03
+mix (1): G =   0.010000, sum(coeff) = 0.2631E+01, coeff =  -.3230E+00 0.5714E-01 0.1139E+01 -.1332E+01 0.3090E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03
+mix (2): G =   0.010000, sum(coeff) = 0.2631E+01, coeff =  -.3230E+00 0.5714E-01 0.1139E+01 -.1332E+01 0.3090E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03
+mix (3): G =   0.010000, sum(coeff) = 0.2631E+01, coeff =  -.3230E+00 0.5714E-01 0.1139E+01 -.1332E+01 0.3090E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03
+mix (4): G =   0.010000, sum(coeff) = 0.2631E+01, coeff =  -.3230E+00 0.5714E-01 0.1139E+01 -.1332E+01 0.3090E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03
+mix (5): G =   0.010000, sum(coeff) = 0.2631E+01, coeff =  -.3230E+00 0.5714E-01 0.1139E+01 -.1332E+01 0.3090E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03
+mix (6): G =   0.010000, sum(coeff) = 0.2631E+01, coeff =  -.3230E+00 0.5714E-01 0.1139E+01 -.1332E+01 0.3090E+01
+   scf:   38    -2327.022615    -2327.022665    -2327.197438  0.000364 -3.492486  0.007787
+     spin moment: S , {S} =    1.67996   1.67996   0.00000   0.00002
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1461E+03 0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03
+mix (0): G =   0.010000, sum(coeff) = 0.2631E+01, coeff =  -.3230E+00 0.5714E-01 0.1139E+01 -.1332E+01 0.3090E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03
+mix (6): G =   0.010000, sum(coeff) = -.3007E+01, coeff =  0.5617E+00 -.2123E+01 0.2783E+01 -.7312E+01 0.3084E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03
+mix (7): G =   0.010000, sum(coeff) = -.3007E+01, coeff =  0.5617E+00 -.2123E+01 0.2783E+01 -.7312E+01 0.3084E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03
+mix (1): G =   0.010000, sum(coeff) = -.3007E+01, coeff =  0.5617E+00 -.2123E+01 0.2783E+01 -.7312E+01 0.3084E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03
+mix (2): G =   0.010000, sum(coeff) = -.3007E+01, coeff =  0.5617E+00 -.2123E+01 0.2783E+01 -.7312E+01 0.3084E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03
+mix (3): G =   0.010000, sum(coeff) = -.3007E+01, coeff =  0.5617E+00 -.2123E+01 0.2783E+01 -.7312E+01 0.3084E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03
+mix (4): G =   0.010000, sum(coeff) = -.3007E+01, coeff =  0.5617E+00 -.2123E+01 0.2783E+01 -.7312E+01 0.3084E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03
+mix (5): G =   0.010000, sum(coeff) = -.3007E+01, coeff =  0.5617E+00 -.2123E+01 0.2783E+01 -.7312E+01 0.3084E+01
+   scf:   39    -2327.022521    -2327.022592    -2327.197454  0.000289 -3.493919  0.007646
+     spin moment: S , {S} =    1.68402   1.68402   0.00000  -0.00002
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1462E+03 0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03
+mix (0): G =   0.010000, sum(coeff) = -.3007E+01, coeff =  0.5617E+00 -.2123E+01 0.2783E+01 -.7312E+01 0.3084E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03
+   scf:   40    -2327.022599    -2327.022595    -2327.197464  0.000091 -3.494137  0.007541
+     spin moment: S , {S} =    1.68567   1.68567   0.00000  -0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1462E+03 0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03
+mix (4): G =   0.010000, sum(coeff) = -.1331E+01, coeff =  -.9181E+00 0.1377E+01 -.3675E+01 0.1250E+01 0.6356E+00
+mix (5): G =   0.010000, sum(coeff) = -.1331E+01, coeff =  -.9181E+00 0.1377E+01 -.3675E+01 0.1250E+01 0.6356E+00
+mix (6): G =   0.010000, sum(coeff) = -.1331E+01, coeff =  -.9181E+00 0.1377E+01 -.3675E+01 0.1250E+01 0.6356E+00
+mix (7): G =   0.010000, sum(coeff) = -.1331E+01, coeff =  -.9181E+00 0.1377E+01 -.3675E+01 0.1250E+01 0.6356E+00
+mix (1): G =   0.010000, sum(coeff) = -.1331E+01, coeff =  -.9181E+00 0.1377E+01 -.3675E+01 0.1250E+01 0.6356E+00
+mix (2): G =   0.010000, sum(coeff) = -.1331E+01, coeff =  -.9181E+00 0.1377E+01 -.3675E+01 0.1250E+01 0.6356E+00
+mix (3): G =   0.010000, sum(coeff) = -.1331E+01, coeff =  -.9181E+00 0.1377E+01 -.3675E+01 0.1250E+01 0.6356E+00
+mix (0): G =   0.010000, sum(coeff) = -.1331E+01, coeff =  -.9181E+00 0.1377E+01 -.3675E+01 0.1250E+01 0.6356E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03
+   scf:   41    -2327.022643    -2327.022619    -2327.197470  0.000074 -3.493946  0.007478
+     spin moment: S , {S} =    1.68612   1.68612   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1463E+03 0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03
+mix (2): G =   0.010000, sum(coeff) = -.8015E+00, coeff =  0.1262E+01 -.3458E+01 0.1653E+01 -.1517E+01 0.1259E+01
+mix (3): G =   0.010000, sum(coeff) = -.8015E+00, coeff =  0.1262E+01 -.3458E+01 0.1653E+01 -.1517E+01 0.1259E+01
+mix (4): G =   0.010000, sum(coeff) = -.8015E+00, coeff =  0.1262E+01 -.3458E+01 0.1653E+01 -.1517E+01 0.1259E+01
+mix (5): G =   0.010000, sum(coeff) = -.8015E+00, coeff =  0.1262E+01 -.3458E+01 0.1653E+01 -.1517E+01 0.1259E+01
+mix (6): G =   0.010000, sum(coeff) = -.8015E+00, coeff =  0.1262E+01 -.3458E+01 0.1653E+01 -.1517E+01 0.1259E+01
+mix (7): G =   0.010000, sum(coeff) = -.8015E+00, coeff =  0.1262E+01 -.3458E+01 0.1653E+01 -.1517E+01 0.1259E+01
+mix (1): G =   0.010000, sum(coeff) = -.8015E+00, coeff =  0.1262E+01 -.3458E+01 0.1653E+01 -.1517E+01 0.1259E+01
+mix (0): G =   0.010000, sum(coeff) = -.8015E+00, coeff =  0.1262E+01 -.3458E+01 0.1653E+01 -.1517E+01 0.1259E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+   scf:   42    -2327.022654    -2327.022637    -2327.197472  0.000042 -3.493771  0.007455
+     spin moment: S , {S} =    1.68599   1.68599   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (7): weights =  0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03
+mix (7): G =   0.010000, sum(coeff) = 0.6025E+01, coeff =  -.2966E+00 -.4173E+00 0.4419E+01 -.4891E+01 0.7211E+01
+mix (1): weights =  0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03
+mix (1): G =   0.010000, sum(coeff) = 0.6025E+01, coeff =  -.2966E+00 -.4173E+00 0.4419E+01 -.4891E+01 0.7211E+01
+mix (2): weights =  0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03
+mix (2): G =   0.010000, sum(coeff) = 0.6025E+01, coeff =  -.2966E+00 -.4173E+00 0.4419E+01 -.4891E+01 0.7211E+01
+mix (3): weights =  0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03
+mix (3): G =   0.010000, sum(coeff) = 0.6025E+01, coeff =  -.2966E+00 -.4173E+00 0.4419E+01 -.4891E+01 0.7211E+01
+mix (4): weights =  0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03
+mix (4): G =   0.010000, sum(coeff) = 0.6025E+01, coeff =  -.2966E+00 -.4173E+00 0.4419E+01 -.4891E+01 0.7211E+01
+mix (5): weights =  0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03
+mix (5): G =   0.010000, sum(coeff) = 0.6025E+01, coeff =  -.2966E+00 -.4173E+00 0.4419E+01 -.4891E+01 0.7211E+01
+mix (6): weights =  0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03
+mix (6): G =   0.010000, sum(coeff) = 0.6025E+01, coeff =  -.2966E+00 -.4173E+00 0.4419E+01 -.4891E+01 0.7211E+01
+mix (0): weights =  0.1463E+03 0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03
+mix (0): G =   0.010000, sum(coeff) = 0.6025E+01, coeff =  -.2966E+00 -.4173E+00 0.4419E+01 -.4891E+01 0.7211E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03
+mix (6): G =   0.010000, sum(coeff) = -.2814E+01, coeff =  0.3777E+00 -.7240E+00 0.1058E+01 -.6608E+01 0.3082E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03
+mix (7): G =   0.010000, sum(coeff) = -.2814E+01, coeff =  0.3777E+00 -.7240E+00 0.1058E+01 -.6608E+01 0.3082E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03
+mix (1): G =   0.010000, sum(coeff) = -.2814E+01, coeff =  0.3777E+00 -.7240E+00 0.1058E+01 -.6608E+01 0.3082E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03
+mix (2): G =   0.010000, sum(coeff) = -.2814E+01, coeff =  0.3777E+00 -.7240E+00 0.1058E+01 -.6608E+01 0.3082E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03
+mix (3): G =   0.010000, sum(coeff) = -.2814E+01, coeff =  0.3777E+00 -.7240E+00 0.1058E+01 -.6608E+01 0.3082E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03
+mix (4): G =   0.010000, sum(coeff) = -.2814E+01, coeff =  0.3777E+00 -.7240E+00 0.1058E+01 -.6608E+01 0.3082E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03
+mix (5): G =   0.010000, sum(coeff) = -.2814E+01, coeff =  0.3777E+00 -.7240E+00 0.1058E+01 -.6608E+01 0.3082E+01
+   scf:   43    -2327.022772    -2327.022704    -2327.197493  0.000162 -3.493421  0.007238
+     spin moment: S , {S} =    1.68748   1.68748   0.00000  -0.00002
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1463E+03 0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03
+mix (0): G =   0.010000, sum(coeff) = -.2814E+01, coeff =  0.3777E+00 -.7240E+00 0.1058E+01 -.6608E+01 0.3082E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03
+mix (5): G =   0.010000, sum(coeff) = 0.4406E+00, coeff =  -.1906E+01 0.9011E+00 0.2969E+01 -.3204E+01 0.1680E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03
+mix (6): G =   0.010000, sum(coeff) = 0.4406E+00, coeff =  -.1906E+01 0.9011E+00 0.2969E+01 -.3204E+01 0.1680E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03
+mix (7): G =   0.010000, sum(coeff) = 0.4406E+00, coeff =  -.1906E+01 0.9011E+00 0.2969E+01 -.3204E+01 0.1680E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03
+mix (1): G =   0.010000, sum(coeff) = 0.4406E+00, coeff =  -.1906E+01 0.9011E+00 0.2969E+01 -.3204E+01 0.1680E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03
+mix (2): G =   0.010000, sum(coeff) = 0.4406E+00, coeff =  -.1906E+01 0.9011E+00 0.2969E+01 -.3204E+01 0.1680E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03
+mix (3): G =   0.010000, sum(coeff) = 0.4406E+00, coeff =  -.1906E+01 0.9011E+00 0.2969E+01 -.3204E+01 0.1680E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03
+mix (4): G =   0.010000, sum(coeff) = 0.4406E+00, coeff =  -.1906E+01 0.9011E+00 0.2969E+01 -.3204E+01 0.1680E+01
+   scf:   44    -2327.022886    -2327.022792    -2327.197543  0.000463 -3.493677  0.006652
+     spin moment: S , {S} =    1.69388   1.69388   0.00000  -0.00003
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1464E+03 0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03
+mix (0): G =   0.010000, sum(coeff) = 0.4406E+00, coeff =  -.1906E+01 0.9011E+00 0.2969E+01 -.3204E+01 0.1680E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1445E+01, coeff =  -.2982E+00 0.1256E+01 -.2700E+00 -.6633E-01 0.8239E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1445E+01, coeff =  -.2982E+00 0.1256E+01 -.2700E+00 -.6633E-01 0.8239E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1445E+01, coeff =  -.2982E+00 0.1256E+01 -.2700E+00 -.6633E-01 0.8239E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1445E+01, coeff =  -.2982E+00 0.1256E+01 -.2700E+00 -.6633E-01 0.8239E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1445E+01, coeff =  -.2982E+00 0.1256E+01 -.2700E+00 -.6633E-01 0.8239E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1445E+01, coeff =  -.2982E+00 0.1256E+01 -.2700E+00 -.6633E-01 0.8239E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1445E+01, coeff =  -.2982E+00 0.1256E+01 -.2700E+00 -.6633E-01 0.8239E+00
+   scf:   45    -2327.022818    -2327.022804    -2327.197561  0.000203 -3.494130  0.006431
+     spin moment: S , {S} =    1.69688   1.69688   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1464E+03 0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1445E+01, coeff =  -.2982E+00 0.1256E+01 -.2700E+00 -.6633E-01 0.8239E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03
+mix (3): G =   0.010000, sum(coeff) = 0.9877E-01, coeff =  -.9117E-01 0.8935E-01 -.1028E+00 0.5203E+00 -.3169E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03
+mix (4): G =   0.010000, sum(coeff) = 0.9877E-01, coeff =  -.9117E-01 0.8935E-01 -.1028E+00 0.5203E+00 -.3169E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03
+mix (5): G =   0.010000, sum(coeff) = 0.9877E-01, coeff =  -.9117E-01 0.8935E-01 -.1028E+00 0.5203E+00 -.3169E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03
+mix (6): G =   0.010000, sum(coeff) = 0.9877E-01, coeff =  -.9117E-01 0.8935E-01 -.1028E+00 0.5203E+00 -.3169E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03
+mix (7): G =   0.010000, sum(coeff) = 0.9877E-01, coeff =  -.9117E-01 0.8935E-01 -.1028E+00 0.5203E+00 -.3169E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03
+mix (1): G =   0.010000, sum(coeff) = 0.9877E-01, coeff =  -.9117E-01 0.8935E-01 -.1028E+00 0.5203E+00 -.3169E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03
+mix (2): G =   0.010000, sum(coeff) = 0.9877E-01, coeff =  -.9117E-01 0.8935E-01 -.1028E+00 0.5203E+00 -.3169E+00
+   scf:   46    -2327.022820    -2327.022812    -2327.197570  0.000118 -3.494418  0.006328
+     spin moment: S , {S} =    1.69835   1.69835   0.00000   0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1464E+03 0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03
+mix (0): G =   0.010000, sum(coeff) = 0.9877E-01, coeff =  -.9117E-01 0.8935E-01 -.1028E+00 0.5203E+00 -.3169E+00
+   scf:   47    -2327.022823    -2327.022817    -2327.197574  0.000048 -3.494520  0.006278
+     spin moment: S , {S} =    1.69905   1.69905   0.00000   0.00001
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (2): G =   0.010000, sum(coeff) = -.7301E-01, coeff =  0.2366E+00 -.2338E+00 0.7505E+00 -.6862E+00 -.1401E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (3): G =   0.010000, sum(coeff) = -.7301E-01, coeff =  0.2366E+00 -.2338E+00 0.7505E+00 -.6862E+00 -.1401E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (4): G =   0.010000, sum(coeff) = -.7301E-01, coeff =  0.2366E+00 -.2338E+00 0.7505E+00 -.6862E+00 -.1401E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (5): G =   0.010000, sum(coeff) = -.7301E-01, coeff =  0.2366E+00 -.2338E+00 0.7505E+00 -.6862E+00 -.1401E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (6): G =   0.010000, sum(coeff) = -.7301E-01, coeff =  0.2366E+00 -.2338E+00 0.7505E+00 -.6862E+00 -.1401E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (7): G =   0.010000, sum(coeff) = -.7301E-01, coeff =  0.2366E+00 -.2338E+00 0.7505E+00 -.6862E+00 -.1401E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (1): G =   0.010000, sum(coeff) = -.7301E-01, coeff =  0.2366E+00 -.2338E+00 0.7505E+00 -.6862E+00 -.1401E+00
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1465E+03 0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (0): G =   0.010000, sum(coeff) = -.7301E-01, coeff =  0.2366E+00 -.2338E+00 0.7505E+00 -.6862E+00 -.1401E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+   scf:   48    -2327.022826    -2327.022821    -2327.197575  0.000009 -3.494504  0.006264
+     spin moment: S , {S} =    1.69918   1.69918   0.00000   0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (7): G =   0.010000, sum(coeff) = 0.1453E+01, coeff =  -.8200E-01 0.4977E+00 -.2614E+00 -.9560E+00 0.2255E+01
+mix (1): G =   0.010000, sum(coeff) = 0.1453E+01, coeff =  -.8200E-01 0.4977E+00 -.2614E+00 -.9560E+00 0.2255E+01
+mix (2): G =   0.010000, sum(coeff) = 0.1453E+01, coeff =  -.8200E-01 0.4977E+00 -.2614E+00 -.9560E+00 0.2255E+01
+mix (3): G =   0.010000, sum(coeff) = 0.1453E+01, coeff =  -.8200E-01 0.4977E+00 -.2614E+00 -.9560E+00 0.2255E+01
+mix (4): G =   0.010000, sum(coeff) = 0.1453E+01, coeff =  -.8200E-01 0.4977E+00 -.2614E+00 -.9560E+00 0.2255E+01
+mix (5): G =   0.010000, sum(coeff) = 0.1453E+01, coeff =  -.8200E-01 0.4977E+00 -.2614E+00 -.9560E+00 0.2255E+01
+mix (6): G =   0.010000, sum(coeff) = 0.1453E+01, coeff =  -.8200E-01 0.4977E+00 -.2614E+00 -.9560E+00 0.2255E+01
+mix (0): weights =  0.1466E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1453E+01, coeff =  -.8200E-01 0.4977E+00 -.2614E+00 -.9560E+00 0.2255E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (6): G =   0.010000, sum(coeff) = 0.5281E+01, coeff =  0.1367E+00 0.7805E+00 -.3181E+01 0.9873E+00 0.6558E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (7): G =   0.010000, sum(coeff) = 0.5281E+01, coeff =  0.1367E+00 0.7805E+00 -.3181E+01 0.9873E+00 0.6558E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (1): G =   0.010000, sum(coeff) = 0.5281E+01, coeff =  0.1367E+00 0.7805E+00 -.3181E+01 0.9873E+00 0.6558E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (2): G =   0.010000, sum(coeff) = 0.5281E+01, coeff =  0.1367E+00 0.7805E+00 -.3181E+01 0.9873E+00 0.6558E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (3): G =   0.010000, sum(coeff) = 0.5281E+01, coeff =  0.1367E+00 0.7805E+00 -.3181E+01 0.9873E+00 0.6558E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (4): G =   0.010000, sum(coeff) = 0.5281E+01, coeff =  0.1367E+00 0.7805E+00 -.3181E+01 0.9873E+00 0.6558E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (5): G =   0.010000, sum(coeff) = 0.5281E+01, coeff =  0.1367E+00 0.7805E+00 -.3181E+01 0.9873E+00 0.6558E+01
+   scf:   49    -2327.022836    -2327.022828    -2327.197577  0.000021 -3.494500  0.006237
+     spin moment: S , {S} =    1.69949   1.69949   0.00000   0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03
+mix (0): G =   0.010000, sum(coeff) = 0.5281E+01, coeff =  0.1367E+00 0.7805E+00 -.3181E+01 0.9873E+00 0.6558E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03
+mix (5): G =   0.010000, sum(coeff) = -.1913E+01, coeff =  0.2169E+01 -.5697E+01 -.3386E+01 -.3339E+01 0.8341E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03
+mix (6): G =   0.010000, sum(coeff) = -.1913E+01, coeff =  0.2169E+01 -.5697E+01 -.3386E+01 -.3339E+01 0.8341E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03
+mix (7): G =   0.010000, sum(coeff) = -.1913E+01, coeff =  0.2169E+01 -.5697E+01 -.3386E+01 -.3339E+01 0.8341E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03
+mix (1): G =   0.010000, sum(coeff) = -.1913E+01, coeff =  0.2169E+01 -.5697E+01 -.3386E+01 -.3339E+01 0.8341E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03
+mix (2): G =   0.010000, sum(coeff) = -.1913E+01, coeff =  0.2169E+01 -.5697E+01 -.3386E+01 -.3339E+01 0.8341E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03
+mix (3): G =   0.010000, sum(coeff) = -.1913E+01, coeff =  0.2169E+01 -.5697E+01 -.3386E+01 -.3339E+01 0.8341E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03
+mix (4): G =   0.010000, sum(coeff) = -.1913E+01, coeff =  0.2169E+01 -.5697E+01 -.3386E+01 -.3339E+01 0.8341E+01
+   scf:   50    -2327.022920    -2327.022874    -2327.197588  0.000119 -3.494424  0.006081
+     spin moment: S , {S} =    1.70111   1.70111   0.00000   0.00002
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03
+mix (0): G =   0.010000, sum(coeff) = -.1913E+01, coeff =  0.2169E+01 -.5697E+01 -.3386E+01 -.3339E+01 0.8341E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+   scf:   51    -2327.023542    -2327.023195    -2327.197659  0.000858 -3.493900  0.004968
+     spin moment: S , {S} =    1.71244   1.71244   0.00000   0.00003
+mix (0): Broyden
+mix (3): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03
+mix (3): G =   0.010000, sum(coeff) = -.6457E+01, coeff =  0.2397E-01 -.1812E+01 -.1794E+01 -.3940E+01 0.1065E+01
+mix (4): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03
+mix (4): G =   0.010000, sum(coeff) = -.6457E+01, coeff =  0.2397E-01 -.1812E+01 -.1794E+01 -.3940E+01 0.1065E+01
+mix (5): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03
+mix (5): G =   0.010000, sum(coeff) = -.6457E+01, coeff =  0.2397E-01 -.1812E+01 -.1794E+01 -.3940E+01 0.1065E+01
+mix (6): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03
+mix (6): G =   0.010000, sum(coeff) = -.6457E+01, coeff =  0.2397E-01 -.1812E+01 -.1794E+01 -.3940E+01 0.1065E+01
+mix (7): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03
+mix (7): G =   0.010000, sum(coeff) = -.6457E+01, coeff =  0.2397E-01 -.1812E+01 -.1794E+01 -.3940E+01 0.1065E+01
+mix (1): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03
+mix (1): G =   0.010000, sum(coeff) = -.6457E+01, coeff =  0.2397E-01 -.1812E+01 -.1794E+01 -.3940E+01 0.1065E+01
+mix (2): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03
+mix (2): G =   0.010000, sum(coeff) = -.6457E+01, coeff =  0.2397E-01 -.1812E+01 -.1794E+01 -.3940E+01 0.1065E+01
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1467E+03 0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03
+mix (0): G =   0.010000, sum(coeff) = -.6457E+01, coeff =  0.2397E-01 -.1812E+01 -.1794E+01 -.3940E+01 0.1065E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03
+   scf:   52    -2327.023486    -2327.023337    -2327.197685  0.000398 -3.493698  0.004463
+     spin moment: S , {S} =    1.71748   1.71748   0.00000   0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1467E+03 0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03
+mix (1): G =   0.010000, sum(coeff) = 0.9016E+00, coeff =  -.3396E+00 0.4952E+00 0.5761E+00 -.2939E+00 0.4638E+00
+mix (2): G =   0.010000, sum(coeff) = 0.9016E+00, coeff =  -.3396E+00 0.4952E+00 0.5761E+00 -.2939E+00 0.4638E+00
+mix (3): G =   0.010000, sum(coeff) = 0.9016E+00, coeff =  -.3396E+00 0.4952E+00 0.5761E+00 -.2939E+00 0.4638E+00
+mix (4): G =   0.010000, sum(coeff) = 0.9016E+00, coeff =  -.3396E+00 0.4952E+00 0.5761E+00 -.2939E+00 0.4638E+00
+mix (5): G =   0.010000, sum(coeff) = 0.9016E+00, coeff =  -.3396E+00 0.4952E+00 0.5761E+00 -.2939E+00 0.4638E+00
+mix (6): G =   0.010000, sum(coeff) = 0.9016E+00, coeff =  -.3396E+00 0.4952E+00 0.5761E+00 -.2939E+00 0.4638E+00
+mix (7): G =   0.010000, sum(coeff) = 0.9016E+00, coeff =  -.3396E+00 0.4952E+00 0.5761E+00 -.2939E+00 0.4638E+00
+mix (0): G =   0.010000, sum(coeff) = 0.9016E+00, coeff =  -.3396E+00 0.4952E+00 0.5761E+00 -.2939E+00 0.4638E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03
+mix (7): G =   0.010000, sum(coeff) = 0.3214E+01, coeff =  0.3411E+00 0.2214E+00 0.4362E+00 -.1058E+01 0.3273E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03
+mix (1): G =   0.010000, sum(coeff) = 0.3214E+01, coeff =  0.3411E+00 0.2214E+00 0.4362E+00 -.1058E+01 0.3273E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03
+mix (2): G =   0.010000, sum(coeff) = 0.3214E+01, coeff =  0.3411E+00 0.2214E+00 0.4362E+00 -.1058E+01 0.3273E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03
+mix (3): G =   0.010000, sum(coeff) = 0.3214E+01, coeff =  0.3411E+00 0.2214E+00 0.4362E+00 -.1058E+01 0.3273E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03
+mix (4): G =   0.010000, sum(coeff) = 0.3214E+01, coeff =  0.3411E+00 0.2214E+00 0.4362E+00 -.1058E+01 0.3273E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03
+mix (5): G =   0.010000, sum(coeff) = 0.3214E+01, coeff =  0.3411E+00 0.2214E+00 0.4362E+00 -.1058E+01 0.3273E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03
+mix (6): G =   0.010000, sum(coeff) = 0.3214E+01, coeff =  0.3411E+00 0.2214E+00 0.4362E+00 -.1058E+01 0.3273E+01
+   scf:   53    -2327.023345    -2327.023341    -2327.197686  0.000023 -3.493735  0.004451
+     spin moment: S , {S} =    1.71767   1.71767   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1467E+03 0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03
+mix (0): G =   0.010000, sum(coeff) = 0.3214E+01, coeff =  0.3411E+00 0.2214E+00 0.4362E+00 -.1058E+01 0.3273E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03
+mix (6): G =   0.010000, sum(coeff) = 0.2942E+01, coeff =  -.1098E+01 0.1342E+00 0.1325E+00 0.1744E+00 0.3599E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03
+mix (7): G =   0.010000, sum(coeff) = 0.2942E+01, coeff =  -.1098E+01 0.1342E+00 0.1325E+00 0.1744E+00 0.3599E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03
+mix (1): G =   0.010000, sum(coeff) = 0.2942E+01, coeff =  -.1098E+01 0.1342E+00 0.1325E+00 0.1744E+00 0.3599E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03
+mix (2): G =   0.010000, sum(coeff) = 0.2942E+01, coeff =  -.1098E+01 0.1342E+00 0.1325E+00 0.1744E+00 0.3599E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03
+mix (3): G =   0.010000, sum(coeff) = 0.2942E+01, coeff =  -.1098E+01 0.1342E+00 0.1325E+00 0.1744E+00 0.3599E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03
+mix (4): G =   0.010000, sum(coeff) = 0.2942E+01, coeff =  -.1098E+01 0.1342E+00 0.1325E+00 0.1744E+00 0.3599E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03
+mix (5): G =   0.010000, sum(coeff) = 0.2942E+01, coeff =  -.1098E+01 0.1342E+00 0.1325E+00 0.1744E+00 0.3599E+01
+   scf:   54    -2327.023358    -2327.023350    -2327.197689  0.000048 -3.493835  0.004406
+     spin moment: S , {S} =    1.71846   1.71846   0.00000  -0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1468E+03 0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03
+mix (0): G =   0.010000, sum(coeff) = 0.2942E+01, coeff =  -.1098E+01 0.1342E+00 0.1325E+00 0.1744E+00 0.3599E+01
+   scf:   55    -2327.023441    -2327.023395    -2327.197702  0.000221 -3.494199  0.004193
+     spin moment: S , {S} =    1.72188   1.72188   0.00000  -0.00002
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03
+mix (5): G =   0.010000, sum(coeff) = -.1362E+01, coeff =  -.7483E-01 -.5237E-01 -.4996E+00 -.2829E+01 0.2093E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03
+mix (6): G =   0.010000, sum(coeff) = -.1362E+01, coeff =  -.7483E-01 -.5237E-01 -.4996E+00 -.2829E+01 0.2093E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03
+mix (7): G =   0.010000, sum(coeff) = -.1362E+01, coeff =  -.7483E-01 -.5237E-01 -.4996E+00 -.2829E+01 0.2093E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03
+mix (1): G =   0.010000, sum(coeff) = -.1362E+01, coeff =  -.7483E-01 -.5237E-01 -.4996E+00 -.2829E+01 0.2093E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03
+mix (2): G =   0.010000, sum(coeff) = -.1362E+01, coeff =  -.7483E-01 -.5237E-01 -.4996E+00 -.2829E+01 0.2093E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03
+mix (3): G =   0.010000, sum(coeff) = -.1362E+01, coeff =  -.7483E-01 -.5237E-01 -.4996E+00 -.2829E+01 0.2093E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03
+mix (4): G =   0.010000, sum(coeff) = -.1362E+01, coeff =  -.7483E-01 -.5237E-01 -.4996E+00 -.2829E+01 0.2093E+01
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1471E+03 0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03
+mix (0): G =   0.010000, sum(coeff) = -.1362E+01, coeff =  -.7483E-01 -.5237E-01 -.4996E+00 -.2829E+01 0.2093E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1125E+00, coeff =  0.9446E-02 0.8902E-01 -.2542E+00 -.5998E+00 0.8680E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1125E+00, coeff =  0.9446E-02 0.8902E-01 -.2542E+00 -.5998E+00 0.8680E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1125E+00, coeff =  0.9446E-02 0.8902E-01 -.2542E+00 -.5998E+00 0.8680E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1125E+00, coeff =  0.9446E-02 0.8902E-01 -.2542E+00 -.5998E+00 0.8680E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1125E+00, coeff =  0.9446E-02 0.8902E-01 -.2542E+00 -.5998E+00 0.8680E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1125E+00, coeff =  0.9446E-02 0.8902E-01 -.2542E+00 -.5998E+00 0.8680E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1125E+00, coeff =  0.9446E-02 0.8902E-01 -.2542E+00 -.5998E+00 0.8680E+00
+   scf:   56    -2327.023475    -2327.023434    -2327.197716  0.000241 -3.494718  0.003981
+     spin moment: S , {S} =    1.72572   1.72572   0.00000  -0.00001
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1472E+03 0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1125E+00, coeff =  0.9446E-02 0.8902E-01 -.2542E+00 -.5998E+00 0.8680E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (3): G =   0.010000, sum(coeff) = 0.7597E+00, coeff =  -.4103E-01 0.2111E+00 0.9968E-01 -.4361E+00 0.9261E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (4): G =   0.010000, sum(coeff) = 0.7597E+00, coeff =  -.4103E-01 0.2111E+00 0.9968E-01 -.4361E+00 0.9261E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (5): G =   0.010000, sum(coeff) = 0.7597E+00, coeff =  -.4103E-01 0.2111E+00 0.9968E-01 -.4361E+00 0.9261E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (6): G =   0.010000, sum(coeff) = 0.7597E+00, coeff =  -.4103E-01 0.2111E+00 0.9968E-01 -.4361E+00 0.9261E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (7): G =   0.010000, sum(coeff) = 0.7597E+00, coeff =  -.4103E-01 0.2111E+00 0.9968E-01 -.4361E+00 0.9261E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (1): G =   0.010000, sum(coeff) = 0.7597E+00, coeff =  -.4103E-01 0.2111E+00 0.9968E-01 -.4361E+00 0.9261E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (2): G =   0.010000, sum(coeff) = 0.7597E+00, coeff =  -.4103E-01 0.2111E+00 0.9968E-01 -.4361E+00 0.9261E+00
+   scf:   57    -2327.023450    -2327.023442    -2327.197720  0.000076 -3.494930  0.003925
+     spin moment: S , {S} =    1.72696   1.72696   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1472E+03 0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (0): G =   0.010000, sum(coeff) = 0.7597E+00, coeff =  -.4103E-01 0.2111E+00 0.9968E-01 -.4361E+00 0.9261E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+   scf:   58    -2327.023439    -2327.023440    -2327.197721  0.000016 -3.494959  0.003930
+     spin moment: S , {S} =    1.72705   1.72705   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1472E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1796E+01, coeff =  0.4567E-02 0.2247E+00 -.3952E+00 0.5038E+00 0.1458E+01
+mix (2): G =   0.010000, sum(coeff) = 0.1796E+01, coeff =  0.4567E-02 0.2247E+00 -.3952E+00 0.5038E+00 0.1458E+01
+mix (3): G =   0.010000, sum(coeff) = 0.1796E+01, coeff =  0.4567E-02 0.2247E+00 -.3952E+00 0.5038E+00 0.1458E+01
+mix (4): G =   0.010000, sum(coeff) = 0.1796E+01, coeff =  0.4567E-02 0.2247E+00 -.3952E+00 0.5038E+00 0.1458E+01
+mix (5): G =   0.010000, sum(coeff) = 0.1796E+01, coeff =  0.4567E-02 0.2247E+00 -.3952E+00 0.5038E+00 0.1458E+01
+mix (6): G =   0.010000, sum(coeff) = 0.1796E+01, coeff =  0.4567E-02 0.2247E+00 -.3952E+00 0.5038E+00 0.1458E+01
+mix (7): G =   0.010000, sum(coeff) = 0.1796E+01, coeff =  0.4567E-02 0.2247E+00 -.3952E+00 0.5038E+00 0.1458E+01
+mix (0): G =   0.010000, sum(coeff) = 0.1796E+01, coeff =  0.4567E-02 0.2247E+00 -.3952E+00 0.5038E+00 0.1458E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1556E+01, coeff =  0.1159E+00 -.1738E+00 0.2135E+00 0.2970E+00 0.1104E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1556E+01, coeff =  0.1159E+00 -.1738E+00 0.2135E+00 0.2970E+00 0.1104E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1556E+01, coeff =  0.1159E+00 -.1738E+00 0.2135E+00 0.2970E+00 0.1104E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1556E+01, coeff =  0.1159E+00 -.1738E+00 0.2135E+00 0.2970E+00 0.1104E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1556E+01, coeff =  0.1159E+00 -.1738E+00 0.2135E+00 0.2970E+00 0.1104E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1556E+01, coeff =  0.1159E+00 -.1738E+00 0.2135E+00 0.2970E+00 0.1104E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1556E+01, coeff =  0.1159E+00 -.1738E+00 0.2135E+00 0.2970E+00 0.1104E+01
+   scf:   59    -2327.023436    -2327.023438    -2327.197721  0.000024 -3.494989  0.003937
+     spin moment: S , {S} =    1.72717   1.72717   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1556E+01, coeff =  0.1159E+00 -.1738E+00 0.2135E+00 0.2970E+00 0.1104E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (6): G =   0.010000, sum(coeff) = 0.3087E+00, coeff =  0.5711E-02 0.2549E-01 -.3477E+00 -.2698E+00 0.8950E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (7): G =   0.010000, sum(coeff) = 0.3087E+00, coeff =  0.5711E-02 0.2549E-01 -.3477E+00 -.2698E+00 0.8950E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (1): G =   0.010000, sum(coeff) = 0.3087E+00, coeff =  0.5711E-02 0.2549E-01 -.3477E+00 -.2698E+00 0.8950E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (2): G =   0.010000, sum(coeff) = 0.3087E+00, coeff =  0.5711E-02 0.2549E-01 -.3477E+00 -.2698E+00 0.8950E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (3): G =   0.010000, sum(coeff) = 0.3087E+00, coeff =  0.5711E-02 0.2549E-01 -.3477E+00 -.2698E+00 0.8950E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (4): G =   0.010000, sum(coeff) = 0.3087E+00, coeff =  0.5711E-02 0.2549E-01 -.3477E+00 -.2698E+00 0.8950E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (5): G =   0.010000, sum(coeff) = 0.3087E+00, coeff =  0.5711E-02 0.2549E-01 -.3477E+00 -.2698E+00 0.8950E+00
+   scf:   60    -2327.023436    -2327.023437    -2327.197722  0.000031 -3.495031  0.003939
+     spin moment: S , {S} =    1.72744   1.72744   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (0): G =   0.010000, sum(coeff) = 0.3087E+00, coeff =  0.5711E-02 0.2549E-01 -.3477E+00 -.2698E+00 0.8950E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (5): G =   0.010000, sum(coeff) = 0.6674E+00, coeff =  0.3626E-01 -.6423E+00 -.9204E+00 -.1356E-01 0.2207E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (6): G =   0.010000, sum(coeff) = 0.6674E+00, coeff =  0.3626E-01 -.6423E+00 -.9204E+00 -.1356E-01 0.2207E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (7): G =   0.010000, sum(coeff) = 0.6674E+00, coeff =  0.3626E-01 -.6423E+00 -.9204E+00 -.1356E-01 0.2207E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (1): G =   0.010000, sum(coeff) = 0.6674E+00, coeff =  0.3626E-01 -.6423E+00 -.9204E+00 -.1356E-01 0.2207E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (2): G =   0.010000, sum(coeff) = 0.6674E+00, coeff =  0.3626E-01 -.6423E+00 -.9204E+00 -.1356E-01 0.2207E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (3): G =   0.010000, sum(coeff) = 0.6674E+00, coeff =  0.3626E-01 -.6423E+00 -.9204E+00 -.1356E-01 0.2207E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (4): G =   0.010000, sum(coeff) = 0.6674E+00, coeff =  0.3626E-01 -.6423E+00 -.9204E+00 -.1356E-01 0.2207E+01
+   scf:   61    -2327.023440    -2327.023439    -2327.197723  0.000020 -3.495061  0.003929
+     spin moment: S , {S} =    1.72778   1.72778   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03
+mix (0): G =   0.010000, sum(coeff) = 0.6674E+00, coeff =  0.3626E-01 -.6423E+00 -.9204E+00 -.1356E-01 0.2207E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03
+mix (4): G =   0.010000, sum(coeff) = 0.4496E+01, coeff =  -.7869E+00 -.1396E+01 -.8697E+00 0.1345E+01 0.6204E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03
+mix (5): G =   0.010000, sum(coeff) = 0.4496E+01, coeff =  -.7869E+00 -.1396E+01 -.8697E+00 0.1345E+01 0.6204E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03
+mix (6): G =   0.010000, sum(coeff) = 0.4496E+01, coeff =  -.7869E+00 -.1396E+01 -.8697E+00 0.1345E+01 0.6204E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03
+mix (7): G =   0.010000, sum(coeff) = 0.4496E+01, coeff =  -.7869E+00 -.1396E+01 -.8697E+00 0.1345E+01 0.6204E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03
+mix (1): G =   0.010000, sum(coeff) = 0.4496E+01, coeff =  -.7869E+00 -.1396E+01 -.8697E+00 0.1345E+01 0.6204E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03
+mix (2): G =   0.010000, sum(coeff) = 0.4496E+01, coeff =  -.7869E+00 -.1396E+01 -.8697E+00 0.1345E+01 0.6204E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03
+mix (3): G =   0.010000, sum(coeff) = 0.4496E+01, coeff =  -.7869E+00 -.1396E+01 -.8697E+00 0.1345E+01 0.6204E+01
+   scf:   62    -2327.023454    -2327.023446    -2327.197725  0.000046 -3.495090  0.003889
+     spin moment: S , {S} =    1.72850   1.72850   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03
+mix (0): G =   0.010000, sum(coeff) = 0.4496E+01, coeff =  -.7869E+00 -.1396E+01 -.8697E+00 0.1345E+01 0.6204E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03
+   scf:   63    -2327.023561    -2327.023502    -2327.197740  0.000293 -3.495213  0.003601
+     spin moment: S , {S} =    1.73306   1.73306   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (2): G =   0.010000, sum(coeff) = 0.3228E+01, coeff =  -.7240E+00 -.8897E+00 -.3617E+00 0.2994E+00 0.4904E+01
+mix (3): G =   0.010000, sum(coeff) = 0.3228E+01, coeff =  -.7240E+00 -.8897E+00 -.3617E+00 0.2994E+00 0.4904E+01
+mix (4): G =   0.010000, sum(coeff) = 0.3228E+01, coeff =  -.7240E+00 -.8897E+00 -.3617E+00 0.2994E+00 0.4904E+01
+mix (5): G =   0.010000, sum(coeff) = 0.3228E+01, coeff =  -.7240E+00 -.8897E+00 -.3617E+00 0.2994E+00 0.4904E+01
+mix (6): G =   0.010000, sum(coeff) = 0.3228E+01, coeff =  -.7240E+00 -.8897E+00 -.3617E+00 0.2994E+00 0.4904E+01
+mix (7): G =   0.010000, sum(coeff) = 0.3228E+01, coeff =  -.7240E+00 -.8897E+00 -.3617E+00 0.2994E+00 0.4904E+01
+mix (1): G =   0.010000, sum(coeff) = 0.3228E+01, coeff =  -.7240E+00 -.8897E+00 -.3617E+00 0.2994E+00 0.4904E+01
+mix (0): weights =  0.1473E+03 0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03
+mix (0): G =   0.010000, sum(coeff) = 0.3228E+01, coeff =  -.7240E+00 -.8897E+00 -.3617E+00 0.2994E+00 0.4904E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+   scf:   64    -2327.024094    -2327.023765    -2327.197796  0.001428 -3.495741  0.002174
+     spin moment: S , {S} =    1.75524   1.75524   0.00000  -0.00000
+mix (0): Broyden
+mix (7): weights =  0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03
+mix (7): G =   0.010000, sum(coeff) = -.1631E+00, coeff =  -.8036E+00 -.3782E+00 0.1632E-01 0.8942E+00 0.1081E+00
+mix (1): weights =  0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03
+mix (1): G =   0.010000, sum(coeff) = -.1631E+00, coeff =  -.8036E+00 -.3782E+00 0.1632E-01 0.8942E+00 0.1081E+00
+mix (2): weights =  0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03
+mix (2): G =   0.010000, sum(coeff) = -.1631E+00, coeff =  -.8036E+00 -.3782E+00 0.1632E-01 0.8942E+00 0.1081E+00
+mix (3): weights =  0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03
+mix (3): G =   0.010000, sum(coeff) = -.1631E+00, coeff =  -.8036E+00 -.3782E+00 0.1632E-01 0.8942E+00 0.1081E+00
+mix (4): weights =  0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03
+mix (4): G =   0.010000, sum(coeff) = -.1631E+00, coeff =  -.8036E+00 -.3782E+00 0.1632E-01 0.8942E+00 0.1081E+00
+mix (5): weights =  0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03
+mix (5): G =   0.010000, sum(coeff) = -.1631E+00, coeff =  -.8036E+00 -.3782E+00 0.1632E-01 0.8942E+00 0.1081E+00
+mix (6): weights =  0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03
+mix (6): G =   0.010000, sum(coeff) = -.1631E+00, coeff =  -.8036E+00 -.3782E+00 0.1632E-01 0.8942E+00 0.1081E+00
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1473E+03 0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03
+mix (0): G =   0.010000, sum(coeff) = -.1631E+00, coeff =  -.8036E+00 -.3782E+00 0.1632E-01 0.8942E+00 0.1081E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1608E+01, coeff =  0.2410E+00 0.2230E+00 0.5760E+00 -.3826E+00 0.9505E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1608E+01, coeff =  0.2410E+00 0.2230E+00 0.5760E+00 -.3826E+00 0.9505E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1608E+01, coeff =  0.2410E+00 0.2230E+00 0.5760E+00 -.3826E+00 0.9505E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1608E+01, coeff =  0.2410E+00 0.2230E+00 0.5760E+00 -.3826E+00 0.9505E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1608E+01, coeff =  0.2410E+00 0.2230E+00 0.5760E+00 -.3826E+00 0.9505E+00
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1608E+01, coeff =  0.2410E+00 0.2230E+00 0.5760E+00 -.3826E+00 0.9505E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1608E+01, coeff =  0.2410E+00 0.2230E+00 0.5760E+00 -.3826E+00 0.9505E+00
+   scf:   65    -2327.023909    -2327.023834    -2327.197806  0.000401 -3.495858  0.001760
+     spin moment: S , {S} =    1.76143   1.76143   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1473E+03 0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1608E+01, coeff =  0.2410E+00 0.2230E+00 0.5760E+00 -.3826E+00 0.9505E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03
+mix (5): G =   0.010000, sum(coeff) = -.2705E+00, coeff =  0.1832E+00 -.4640E+00 0.8162E-01 0.2231E-01 -.9359E-01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03
+mix (6): G =   0.010000, sum(coeff) = -.2705E+00, coeff =  0.1832E+00 -.4640E+00 0.8162E-01 0.2231E-01 -.9359E-01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03
+mix (7): G =   0.010000, sum(coeff) = -.2705E+00, coeff =  0.1832E+00 -.4640E+00 0.8162E-01 0.2231E-01 -.9359E-01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03
+mix (1): G =   0.010000, sum(coeff) = -.2705E+00, coeff =  0.1832E+00 -.4640E+00 0.8162E-01 0.2231E-01 -.9359E-01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03
+mix (2): G =   0.010000, sum(coeff) = -.2705E+00, coeff =  0.1832E+00 -.4640E+00 0.8162E-01 0.2231E-01 -.9359E-01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03
+mix (3): G =   0.010000, sum(coeff) = -.2705E+00, coeff =  0.1832E+00 -.4640E+00 0.8162E-01 0.2231E-01 -.9359E-01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03
+mix (4): G =   0.010000, sum(coeff) = -.2705E+00, coeff =  0.1832E+00 -.4640E+00 0.8162E-01 0.2231E-01 -.9359E-01
+   scf:   66    -2327.023837    -2327.023835    -2327.197807  0.000021 -3.495854  0.001733
+     spin moment: S , {S} =    1.76177   1.76177   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1474E+03 0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03
+mix (0): G =   0.010000, sum(coeff) = -.2705E+00, coeff =  0.1832E+00 -.4640E+00 0.8162E-01 0.2231E-01 -.9359E-01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (4): G =   0.010000, sum(coeff) = -.1216E+00, coeff =  -.4754E+00 0.1339E+00 -.9270E-01 -.3463E+00 0.6589E+00
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (5): G =   0.010000, sum(coeff) = -.1216E+00, coeff =  -.4754E+00 0.1339E+00 -.9270E-01 -.3463E+00 0.6589E+00
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (6): G =   0.010000, sum(coeff) = -.1216E+00, coeff =  -.4754E+00 0.1339E+00 -.9270E-01 -.3463E+00 0.6589E+00
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (7): G =   0.010000, sum(coeff) = -.1216E+00, coeff =  -.4754E+00 0.1339E+00 -.9270E-01 -.3463E+00 0.6589E+00
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (1): G =   0.010000, sum(coeff) = -.1216E+00, coeff =  -.4754E+00 0.1339E+00 -.9270E-01 -.3463E+00 0.6589E+00
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (2): G =   0.010000, sum(coeff) = -.1216E+00, coeff =  -.4754E+00 0.1339E+00 -.9270E-01 -.3463E+00 0.6589E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (3): G =   0.010000, sum(coeff) = -.1216E+00, coeff =  -.4754E+00 0.1339E+00 -.9270E-01 -.3463E+00 0.6589E+00
+   scf:   67    -2327.023833    -2327.023834    -2327.197807  0.000002 -3.495852  0.001733
+     spin moment: S , {S} =    1.76177   1.76177   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1474E+03 0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (0): G =   0.010000, sum(coeff) = -.1216E+00, coeff =  -.4754E+00 0.1339E+00 -.9270E-01 -.3463E+00 0.6589E+00
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1493E+01, coeff =  0.2272E-01 -.4024E-01 -.3904E+00 0.6374E+00 0.1264E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1493E+01, coeff =  0.2272E-01 -.4024E-01 -.3904E+00 0.6374E+00 0.1264E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1493E+01, coeff =  0.2272E-01 -.4024E-01 -.3904E+00 0.6374E+00 0.1264E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1493E+01, coeff =  0.2272E-01 -.4024E-01 -.3904E+00 0.6374E+00 0.1264E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1493E+01, coeff =  0.2272E-01 -.4024E-01 -.3904E+00 0.6374E+00 0.1264E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1493E+01, coeff =  0.2272E-01 -.4024E-01 -.3904E+00 0.6374E+00 0.1264E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1493E+01, coeff =  0.2272E-01 -.4024E-01 -.3904E+00 0.6374E+00 0.1264E+01
+   scf:   68    -2327.023837    -2327.023835    -2327.197807  0.000010 -3.495855  0.001723
+     spin moment: S , {S} =    1.76193   1.76193   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1478E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1493E+01, coeff =  0.2272E-01 -.4024E-01 -.3904E+00 0.6374E+00 0.1264E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03
+mix (2): G =   0.010000, sum(coeff) = 0.4253E+01, coeff =  0.3353E-01 -.5437E-01 0.6321E+00 0.1130E+01 0.2512E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03
+mix (3): G =   0.010000, sum(coeff) = 0.4253E+01, coeff =  0.3353E-01 -.5437E-01 0.6321E+00 0.1130E+01 0.2512E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03
+mix (4): G =   0.010000, sum(coeff) = 0.4253E+01, coeff =  0.3353E-01 -.5437E-01 0.6321E+00 0.1130E+01 0.2512E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03
+mix (5): G =   0.010000, sum(coeff) = 0.4253E+01, coeff =  0.3353E-01 -.5437E-01 0.6321E+00 0.1130E+01 0.2512E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03
+mix (6): G =   0.010000, sum(coeff) = 0.4253E+01, coeff =  0.3353E-01 -.5437E-01 0.6321E+00 0.1130E+01 0.2512E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03
+mix (7): G =   0.010000, sum(coeff) = 0.4253E+01, coeff =  0.3353E-01 -.5437E-01 0.6321E+00 0.1130E+01 0.2512E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03
+mix (1): G =   0.010000, sum(coeff) = 0.4253E+01, coeff =  0.3353E-01 -.5437E-01 0.6321E+00 0.1130E+01 0.2512E+01
+   scf:   69    -2327.023840    -2327.023838    -2327.197807  0.000024 -3.495867  0.001701
+     spin moment: S , {S} =    1.76231   1.76231   0.00000   0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03
+mix (0): G =   0.010000, sum(coeff) = 0.4253E+01, coeff =  0.3353E-01 -.5437E-01 0.6321E+00 0.1130E+01 0.2512E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03
+mix (1): G =   0.010000, sum(coeff) = 0.6162E+01, coeff =  -.3289E+00 0.2697E+00 0.5999E+00 0.1311E+01 0.4310E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03
+mix (2): G =   0.010000, sum(coeff) = 0.6162E+01, coeff =  -.3289E+00 0.2697E+00 0.5999E+00 0.1311E+01 0.4310E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03
+mix (3): G =   0.010000, sum(coeff) = 0.6162E+01, coeff =  -.3289E+00 0.2697E+00 0.5999E+00 0.1311E+01 0.4310E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03
+mix (4): G =   0.010000, sum(coeff) = 0.6162E+01, coeff =  -.3289E+00 0.2697E+00 0.5999E+00 0.1311E+01 0.4310E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03
+mix (5): G =   0.010000, sum(coeff) = 0.6162E+01, coeff =  -.3289E+00 0.2697E+00 0.5999E+00 0.1311E+01 0.4310E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03
+mix (6): G =   0.010000, sum(coeff) = 0.6162E+01, coeff =  -.3289E+00 0.2697E+00 0.5999E+00 0.1311E+01 0.4310E+01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03
+mix (7): G =   0.010000, sum(coeff) = 0.6162E+01, coeff =  -.3289E+00 0.2697E+00 0.5999E+00 0.1311E+01 0.4310E+01
+   scf:   70    -2327.023851    -2327.023844    -2327.197809  0.000085 -3.495905  0.001620
+     spin moment: S , {S} =    1.76370   1.76370   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1479E+03 0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03
+mix (0): G =   0.010000, sum(coeff) = 0.6162E+01, coeff =  -.3289E+00 0.2697E+00 0.5999E+00 0.1311E+01 0.4310E+01
+   scf:   71    -2327.023906    -2327.023872    -2327.197817  0.000400 -3.496087  0.001245
+     spin moment: S , {S} =    1.77019   1.77019   0.00000  -0.00000
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03
+mix (7): G =   0.010000, sum(coeff) = 0.1097E+01, coeff =  -.4729E+00 0.1608E+00 0.3351E+00 0.7222E-01 0.1002E+01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03
+mix (1): G =   0.010000, sum(coeff) = 0.1097E+01, coeff =  -.4729E+00 0.1608E+00 0.3351E+00 0.7222E-01 0.1002E+01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03
+mix (2): G =   0.010000, sum(coeff) = 0.1097E+01, coeff =  -.4729E+00 0.1608E+00 0.3351E+00 0.7222E-01 0.1002E+01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03
+mix (3): G =   0.010000, sum(coeff) = 0.1097E+01, coeff =  -.4729E+00 0.1608E+00 0.3351E+00 0.7222E-01 0.1002E+01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03
+mix (4): G =   0.010000, sum(coeff) = 0.1097E+01, coeff =  -.4729E+00 0.1608E+00 0.3351E+00 0.7222E-01 0.1002E+01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03
+mix (5): G =   0.010000, sum(coeff) = 0.1097E+01, coeff =  -.4729E+00 0.1608E+00 0.3351E+00 0.7222E-01 0.1002E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03
+mix (6): G =   0.010000, sum(coeff) = 0.1097E+01, coeff =  -.4729E+00 0.1608E+00 0.3351E+00 0.7222E-01 0.1002E+01
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1479E+03 0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03
+mix (0): G =   0.010000, sum(coeff) = 0.1097E+01, coeff =  -.4729E+00 0.1608E+00 0.3351E+00 0.7222E-01 0.1002E+01
+mix (6): Broyden
+mix (6): n_hist = 6 / 6
+mix (6): weights =  0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03 0.1482E+03
+mix (6): G =   0.010000, sum(coeff) = 0.6130E+00, coeff =  0.2223E+00 0.5010E+00 -.1757E+00 0.1003E+00 -.3485E-01
+mix (7): Broyden
+mix (7): n_hist = 6 / 6
+mix (7): weights =  0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03 0.1482E+03
+mix (7): G =   0.010000, sum(coeff) = 0.6130E+00, coeff =  0.2223E+00 0.5010E+00 -.1757E+00 0.1003E+00 -.3485E-01
+mix (1): Broyden
+mix (1): n_hist = 6 / 6
+mix (1): weights =  0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03 0.1482E+03
+mix (1): G =   0.010000, sum(coeff) = 0.6130E+00, coeff =  0.2223E+00 0.5010E+00 -.1757E+00 0.1003E+00 -.3485E-01
+mix (2): Broyden
+mix (2): n_hist = 6 / 6
+mix (2): weights =  0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03 0.1482E+03
+mix (2): G =   0.010000, sum(coeff) = 0.6130E+00, coeff =  0.2223E+00 0.5010E+00 -.1757E+00 0.1003E+00 -.3485E-01
+mix (3): Broyden
+mix (3): n_hist = 6 / 6
+mix (3): weights =  0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03 0.1482E+03
+mix (3): G =   0.010000, sum(coeff) = 0.6130E+00, coeff =  0.2223E+00 0.5010E+00 -.1757E+00 0.1003E+00 -.3485E-01
+mix (4): Broyden
+mix (4): n_hist = 6 / 6
+mix (4): weights =  0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03 0.1482E+03
+mix (4): G =   0.010000, sum(coeff) = 0.6130E+00, coeff =  0.2223E+00 0.5010E+00 -.1757E+00 0.1003E+00 -.3485E-01
+mix (5): Broyden
+mix (5): n_hist = 6 / 6
+mix (5): weights =  0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03 0.1482E+03
+mix (5): G =   0.010000, sum(coeff) = 0.6130E+00, coeff =  0.2223E+00 0.5010E+00 -.1757E+00 0.1003E+00 -.3485E-01
+   scf:   72    -2327.023929    -2327.023898    -2327.197823  0.000418 -3.496279  0.000951
+     spin moment: S , {S} =    1.77700   1.77700   0.00000  -0.00000
+mix (0): Broyden
+mix (0): n_hist = 6 / 6
+mix (0): weights =  0.1479E+03 0.1480E+03 0.1480E+03 0.1481E+03 0.1482E+03
+mix (0): G =   0.010000, sum(coeff) = 0.6130E+00, coeff =  0.2223E+00 0.5010E+00 -.1757E+00 0.1003E+00 -.3485E-01
+   scf:   73    -2327.023897    -2327.023897    -2327.197823  0.000026 -3.496294  0.000948
+     spin moment: S , {S} =    1.77743   1.77743   0.00000  -0.00000
+
+SCF Convergence by DM+H criterion
+max |DM_out - DM_in|         :     0.0000259136
+max |H_out - H_in|      (eV) :     0.0009481631
+SCF cycle converged after 73 iterations
+mix (5): resetting history of all mixers
+mix (6): resetting history of all mixers
+mix (7): resetting history of all mixers
+mix (1): resetting history of all mixers
+mix (2): resetting history of all mixers
+mix (3): resetting history of all mixers
+mix (4): resetting history of all mixers
+mix (0): resetting history of all mixers
+
+Using DM_out to compute the final energy and forces
+No. of atoms with KB's overlaping orbs in proc 0. Max # of overlaps:       3      45
+
+siesta: E_KS(eV) =            -2327.0239
+
+siesta: E_KS - E_eggbox =     -2327.0239
+     spin moment: S , {S} =    1.77743   1.77743   0.00000  -0.00000
+
+siesta: Atomic forces (eV/Ang):
+----------------------------------------
+   Tot   -0.000000    0.000000   -0.000000
+----------------------------------------
+   Max    0.081963
+   Res    0.038637    sqrt( Sum f_i^2 / 3N )
+----------------------------------------
+   Max    0.081963    constrained
+
+Stress-tensor-Voigt (kbar):        6.67        6.67       -1.18       -0.00       -0.00       -0.00
+(Free)E + p*V (eV/cell)    -2328.2772
+Target enthalpy (eV/cell)    -2327.1978
+
+mulliken: Atomic and Orbital Populations:
+
+Species: fe_nc               
+
+Atom      Orb        Charge      Spin       Svec
+----------------------------------------------------------------
+    1  1 4s         1.34043   0.02220     -0.014   0.000  -0.017
+    1  2 4s         0.10732   0.06311      0.004   0.000   0.063
+    1  3 3dxy       1.22796   0.65163      0.058   0.000   0.649
+    1  4 3dyz       1.24672   0.48501     -0.001   0.000   0.485
+    1  5 3dz2       1.27210   0.47681      0.011   0.000   0.477
+    1  6 3dxz       1.24672   0.48501     -0.001   0.000   0.485
+    1  7 3dx2-y2    1.22656   0.65308      0.058   0.000   0.651
+    1  8 3dxy       0.04755   0.06833      0.009   0.000   0.068
+    1  9 3dyz       0.03199   0.06030      0.004   0.000   0.060
+    1 10 3dz2       0.07189   0.04634      0.003   0.000   0.046
+    1 11 3dxz       0.03199   0.06030      0.004   0.000   0.060
+    1 12 3dx2-y2    0.04752   0.06830      0.009   0.000   0.068
+    1 13 4Ppy       0.02837   0.00570      0.001   0.000  -0.006
+    1 14 4Ppz       0.00542   0.00460      0.004   0.000   0.001
+    1 15 4Ppx       0.02837   0.00570      0.001   0.000  -0.006
+    1     Total     7.96092   3.08773      0.152   0.000   3.084
+
+    2  1 4s         0.86618   0.01532     -0.015   0.000   0.000
+    2  2 4s         0.19138   0.03194      0.032   0.000   0.000
+    2  3 3dxy       1.43249   0.46870      0.469   0.000   0.000
+    2  4 3dyz       1.29847   0.11921      0.119   0.000   0.000
+    2  5 3dz2       1.17953   0.13273      0.133   0.000   0.000
+    2  6 3dxz       1.29847   0.11921      0.119   0.000   0.000
+    2  7 3dx2-y2    1.43217   0.46908      0.469   0.000   0.000
+    2  8 3dxy       0.00170   0.03715      0.037   0.000   0.000
+    2  9 3dyz      -0.01654   0.01891      0.019   0.000   0.000
+    2 10 3dz2       0.07316   0.00949      0.009   0.000  -0.000
+    2 11 3dxz      -0.01654   0.01891      0.019   0.000   0.000
+    2 12 3dx2-y2    0.00164   0.03711      0.037   0.000   0.000
+    2 13 4Ppy       0.11936   0.01148      0.011   0.000  -0.000
+    2 14 4Ppz       0.09734   0.00404      0.004   0.000   0.000
+    2 15 4Ppx       0.11936   0.01148      0.011   0.000  -0.000
+    2     Total     8.07817   1.47413      1.474   0.000   0.000
+
+    3  1 4s         1.34043   0.02220     -0.014   0.000   0.017
+    3  2 4s         0.10732   0.06311      0.004   0.000  -0.063
+    3  3 3dxy       1.22796   0.65163      0.058   0.000  -0.649
+    3  4 3dyz       1.24672   0.48501     -0.001   0.000  -0.485
+    3  5 3dz2       1.27210   0.47681      0.011   0.000  -0.477
+    3  6 3dxz       1.24672   0.48501     -0.001   0.000  -0.485
+    3  7 3dx2-y2    1.22656   0.65308      0.058   0.000  -0.651
+    3  8 3dxy       0.04755   0.06833      0.009   0.000  -0.068
+    3  9 3dyz       0.03199   0.06030      0.004   0.000  -0.060
+    3 10 3dz2       0.07189   0.04634      0.003   0.000  -0.046
+    3 11 3dxz       0.03199   0.06030      0.004   0.000  -0.060
+    3 12 3dx2-y2    0.04752   0.06830      0.009   0.000  -0.068
+    3 13 4Ppy       0.02837   0.00570      0.001   0.000   0.006
+    3 14 4Ppz       0.00542   0.00460      0.004   0.000  -0.001
+    3 15 4Ppx       0.02837   0.00570      0.001   0.000   0.006
+    3     Total     7.96092   3.08773      0.152   0.000  -3.084
+
+----------------------------------------------------------------
+Total              24.00000   1.77743      1.777   0.000  -0.000
+
+
+siesta: Program's energy decomposition (eV):
+siesta: Ebs     =      -138.224663
+siesta: Eions   =      2141.484345
+siesta: Ena     =        95.469235
+siesta: Ekin    =      2356.534352
+siesta: Enl     =     -1464.252188
+siesta: Eso     =         0.000000
+siesta: Eldau   =         0.000000
+siesta: DEna    =       -28.363807
+siesta: DUscf   =         2.906310
+siesta: DUext   =         0.000000
+siesta: Enegf   =         0.000000
+siesta: Exc     =     -1147.833455
+siesta: eta*DQ  =         0.000000
+siesta: Emadel  =         0.000000
+siesta: Emeta   =         0.000000
+siesta: Emolmec =         0.000000
+siesta: Ekinion =         0.000000
+siesta: Eharris =     -2327.023897
+siesta: Etot    =     -2327.023897
+siesta: FreeEng =     -2327.197823
+
+siesta: Final energy (eV):
+siesta:  Band Struct. =    -138.224663
+siesta:       Kinetic =    2356.534352
+siesta:       Hartree =    1407.488419
+siesta:       Eldau   =       0.000000
+siesta:       Eso     =       0.000000
+siesta:    Ext. field =       0.000000
+siesta:       Enegf   =       0.000000
+siesta:   Exch.-corr. =   -1147.833455
+siesta:  Ion-electron =   -4749.515363
+siesta:       Ion-ion =    -193.697851
+siesta:       Ekinion =       0.000000
+siesta:         Total =   -2327.023897
+siesta:         Fermi =      -3.496294
+
+siesta: Atomic forces (eV/Ang):
+siesta:      1    0.000000    0.000000   -0.081961
+siesta:      2   -0.000000   -0.000000   -0.000002
+siesta:      3   -0.000000    0.000000    0.081963
+siesta: ----------------------------------------
+siesta:    Tot   -0.000000    0.000000   -0.000000
+
+siesta: Stress tensor (static) (eV/Ang**3):
+siesta:     0.004163   -0.000000   -0.000000
+siesta:    -0.000000    0.004163   -0.000000
+siesta:    -0.000000   -0.000000   -0.000737
+
+siesta: Cell volume =        426.771459 Ang**3
+
+siesta: Pressure (static):
+siesta:                Solid            Molecule  Units
+siesta:          -0.00002755         -0.00002486  Ry/Bohr**3
+siesta:          -0.00252923         -0.00228234  eV/Ang**3
+siesta:          -4.05231067         -3.65674493  kBar
+(Free)E+ p_basis*V_orbitals  =       -2324.927895
+(Free)Eharris+ p_basis*V_orbitals  =       -2324.927894
+     spin moment: S , {S} =    1.77743   1.77743   0.00000  -0.00000
+>> End of run:   5-NOV-2018  10:55:13
+Job completed

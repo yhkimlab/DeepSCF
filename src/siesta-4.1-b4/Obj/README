@@ -1,0 +1,59 @@
+This directory is the default place to hold the object files resulting
+from the compilation of the sources in Src. 
+The VPATH mechanism of modern 'make' programs is used. This scheme has
+many advantages. Among them:
+
+- The Src directory is kept pristine.
+- Many different object directories can be used concurrently to
+  compile the program with different compilers or optimization levels.
+  (see below the NOTE for Advanced Users)
+
+If you just want to compile the program, issue the command:
+
+  sh ../Src/obj_setup.sh
+
+to populate this directory with the minimal scaffolding of makefiles, and
+then make sure that you create or generate an 'arch.make' file. Then, type
+
+  make
+
+To compile utility programs (those living in Util), you can just simply
+use the provided makefiles, typing "make" as appropriate.
+
+* arch.make files
+  This directory contains two default arch.make files:
+    gfortran.make which is the serial compilation of siesta using gfortran
+    intel.make which is the serial compilation of siesta using intel compiler
+
+    gfortran-system.make is a serial Linux template for GNU Fortran 10 or
+    newer, with external BLAS and LAPACK. Install the development libraries
+    for BLAS and LAPACK, a C compiler, GNU Fortran, and Make. Then, from this
+    directory, run:
+
+      sh ../Src/obj_setup.sh
+      cp gfortran-system.make arch.make
+      make -j2
+
+    The -fallow-argument-mismatch flag is needed by the legacy interfaces
+    when using recent GNU Fortran. With older GNU Fortran versions, start
+    from gfortran.make instead and adapt the compiler/library flags.
+
+    The generated siesta executable includes the DeepSCF changes that write
+    rhoatom and rhoover and read a predicted density from In.RHO. Use its
+    absolute path when running calculations from another directory.
+
+    arch.make, Makefile, and build subdirectories are generated locally.
+    This distribution preserves templates rather than a machine-specific
+    build configuration. MPI builds require a separately adapted arch.make.
+
+* NOTE for Advanced Users
+
+The mechanism described here can be repeated in other directories at the same level,
+with different names. Simply provide the appropriate arch.make, and issue the
+setup command above. To compile utility programs, you need to use the form:
+
+   make OBJDIR=ObjName
+
+where ObjName is the name of the object directory of your choice. 
+
+

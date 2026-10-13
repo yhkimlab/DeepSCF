@@ -5,7 +5,7 @@
 
 #--------- Medules list ---------#
 
-import fortranfile as fortran
+from . import fortranfile as fortran
 import struct
 import numpy as np
 import glob

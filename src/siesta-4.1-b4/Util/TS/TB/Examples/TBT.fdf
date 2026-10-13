@@ -1,0 +1,54 @@
+# Save Green function DOS
+TBT.DOS.Gf T 
+# Save spectral function DOS
+TBT.DOS.A  T
+
+# Electrode eta
+TBT.Elecs.Eta 1.e-5 eV
+
+# The number of k-points perpendicular to transport direction
+%block TBT.kgrid_Monkhorst_Pack
+ 100 0 0 0.
+   0 1 0 0.
+   0 0 1 0.
+%endblock TBT.kgrid_Monkhorst_Pack
+
+%block TBT.Contours.Window
+  neq
+%endblock TBT.Contours.Window
+%block TBT.Contour.Window.neq
+  part line
+   from -5. eV to 5. eV
+      delta .025 eV
+      method mid-rule
+%endblock TBT.Contour.Window.neq
+
+# Generic electrodes
+%block TBT.Elecs
+  left
+  right
+%endblock TBT.Elecs
+%block TBT.ChemPots
+  left
+  right
+%endblock TBT.ChemPots
+
+%block TBT.ChemPot.left
+  mu V/2
+  contour.eq
+    begin
+      c-left
+      t-left
+    end
+%endblock 
+%block TBT.ChemPot.right
+  mu -V/2
+  contour.eq
+    begin
+      c-right
+      t-right
+    end
+%endblock
+
+
+

@@ -1,0 +1,57 @@
+#(1) General system descriptors
+
+SystemName       Molecular           # Descriptive name of the system
+SystemLabel      Molecular           # Short name for naming files
+%include STRUCT.fdf
+
+#(2) Basis definition
+
+PAO.BasisType    split
+PAO.BasisSize    DZP
+PAO.EnergyShift  30.000 meV
+PAO.SplitNorm    0.150
+
+
+#(3) Kpoint Sampling
+
+%block kgrid_Monkhorst_Pack
+   1   0   0   0.000000
+   0   1   0   0.000000
+   0   0   1   0.000000
+%endblock kgrid_Monkhorst_Pack
+
+%block MeshSizes
+ 80 80 80
+%endblock MeshSizes
+
+#(4) DFT, Grid, SCF
+
+XC.functional         GGA           # LDA or GGA (default = LDA)
+XC.authors            PBE            # CA (Ceperley-Aldr) = PZ
+MeshCutoff            80.000000    Ry      # Default: 50.0 Ry ~ 0.444 Bohr
+                                    #         100.0 Ry ~ 0.314 Bohr
+MaxSCFIterations      1000             # Default: 50
+
+
+DM.MixingWeight       0.25000          # Default: 0.25
+DM.NumberPulay        15             # Default: 0
+DM.PulayOnFile        F             # SystemLabel.P1, SystemLabel.P2
+DM.Tolerance          1.d-4         # Default: 1.d-4
+NeglNonOverlapInt     F             # Default: F
+
+MD.TypeOfRun          CG            # Type of dynamics:
+MD.VariableCell       F
+MD.NumCGsteps         0             # 0 for single-point / 100 for gopt
+MD.MaxCGDispl         0.2 Bohr      # Default: 0.2 Bohr
+MD.MaxForceTol        0.04 eV/Ang   # Default: 0.04 eV/Ang
+
+
+
+#(5) Eigenvalue problem: order-N or diagonalization
+
+SolutionMethod        Diagon 
+ElectronicTemperature 300.0 K       # Default: 300.0 K
+Diag.ParallelOverK     F
+
+SaveIonicCharge   .true.
+SaveRho           .true.

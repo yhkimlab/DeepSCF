@@ -1,0 +1,29 @@
+# @package _global_
+
+hydra:
+  run:
+    dir: './results/predict/examples/r_plus_s_x3'
+
+gpu: 0
+
+load:
+  model: 'pretrained/r_plus_s_x3/model.pt'
+
+model:
+  mean: 0.000703515019467
+  std: 0.011005317267711
+  input_layers: 3
+  layers: 32
+  residual: true
+  kernal_size: 5
+  activation_function: 'ReLU'
+  pooling_method: 'max'
+  normalization: true
+
+target:
+  path: 'datasets/evaluation/examples/r_plus_s_x3'
+  cell:
+    - [37.79453756, 0, 0]
+    - [0, 37.79453756, 0]
+    - [0, 0, 37.79453756]
+  mesh: [80, 80, 80]

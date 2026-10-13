@@ -7,7 +7,7 @@ from omegaconf import DictConfig, OmegaConf
 from model import ResUNet
 from utils import data, log
 from utils.unit import ang2bohr
-import siestaio as io
+from utils import siestaio as io
 import pickle
 import h5py
 import numpy as np
@@ -83,7 +83,7 @@ def convert(args, device, test_list, model):
     # 
 
 
-@hydra.main(config_path="config", config_name="predict")
+@hydra.main(config_path="configs/predict", config_name="default")
 def main(args: OmegaConf):
 
     # gpu/cpu
@@ -111,7 +111,9 @@ def main(args: OmegaConf):
     else:
         with open(path_data,'rb') as f:
             data_list = pickle.load(f)
-        target_list = data_list['test']
+        original_cwd = hydra.utils.get_original_cwd()
+        target_list = [path if os.path.isabs(path) else os.path.join(original_cwd, path)
+                       for path in data_list['test']]
 
     # convert to SIESTA RHO data
     convert(args, device, target_list, model)

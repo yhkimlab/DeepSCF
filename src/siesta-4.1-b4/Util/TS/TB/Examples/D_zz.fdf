@@ -1,0 +1,19 @@
+SystemLabel D_zz
+
+TBT.TSHS ../DEV_D_zz.nc
+%block TBT.Elec.left
+  TSHS ../ELEC_D_zz.nc
+  chemical-potential left
+  semi-inf-direction -a2
+  electrode-position 1
+  check-kgrid F
+%endblock TBT.Elec.left
+%block TBT.Elec.right
+  TSHS ../ELEC_D_zz.nc
+  chemical-potential Right
+  semi-inf-direction +a2
+  electrode-position end -1
+  check-kgrid F
+%endblock TBT.Elec.right
+
+%include TBT.fdf

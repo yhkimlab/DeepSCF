@@ -1,0 +1,32 @@
+SystemLabel HOLE_D_zz
+
+TBT.TSHS ../HOLE_D_zz.nc
+%block TBT.Elec.left
+  TSHS ../ELEC_D_zz.nc
+  chemical-potential left
+  semi-inf-direction -a2
+  electrode-position begin 1
+  rep-a1 10
+  check-kgrid F
+%endblock TBT.Elec.left
+%block TBT.Elec.right
+  TSHS ../ELEC_D_zz.nc
+  chemical-potential Right
+  semi-inf-direction +a2
+  electrode-position end -1
+  rep-a1 10
+  check-kgrid F
+%endblock TBT.Elec.right
+
+# Here it pays off to explicitly set the device atoms
+%block TBT.Atoms.Device
+  atom from 341 to 711
+%endblock
+
+%block TBT.kgrid_Monkhorst_Pack
+ 30 0 0 0.
+  0 1 0 0.
+  0 0 1 0.
+%endblock TBT.kgrid_Monkhorst_Pack
+
+%include TBT.fdf

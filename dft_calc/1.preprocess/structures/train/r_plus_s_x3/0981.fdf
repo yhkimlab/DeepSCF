@@ -1,0 +1,28 @@
+NumberOfAtoms    6           # Number of atoms
+NumberOfSpecies  4           # Number of species
+
+%block ChemicalSpeciesLabel
+ 1 6 C
+ 2 7 N
+ 3 8 O
+ 4 1 H
+%endblock ChemicalSpeciesLabel
+
+#(3) Lattice, coordinates, k-sampling
+
+LatticeConstant       1.000000000 Ang
+%block LatticeVectors
+   20.000000000     0.000000000     0.000000000
+    0.000000000    20.000000000     0.000000000
+    0.000000000     0.000000000    20.000000000
+%endblock LatticeVectors
+
+AtomicCoordinatesFormat Ang
+%block AtomicCoordinatesAndAtomicSpecies
+    10.328511039     9.595563868     9.526730919    1    1
+     9.968514029     9.119112449    10.667860564    2    2
+     9.875512127     9.997186188    11.635108730    2    3
+    10.200084173    11.085618319    11.048809136    2    4
+    10.491126105    10.867743364     9.721195606    3    5
+    10.488003487     9.089524631     8.539496366    4    6
+%endblock AtomicCoordinatesAndAtomicSpecies

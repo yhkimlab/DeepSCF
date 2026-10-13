@@ -16,56 +16,190 @@ git clone https://github.com/yhkimlab/DeepSCF.git
 cd DeepSCF
 ```
 
+Download and install the pretrained models from the
+[`DeepSCF_v1`](https://github.com/yhkimlab/DeepSCF/releases/tag/DeepSCF_v1)
+release. The setup script downloads and restores the
+`pretrained/<model_case>/{model.pt,data.pkl}` directory structure used by the
+provided configurations.
+
+```bash
+bash setup.sh
+```
+
 ### Requirements
 
-To use DeepSCF, we recommend setting up an Anaconda environment with Python ≥ `3.7.15`. The following libraries are required:
+To reproduce the original DeepSCF environment, we recommend creating an
+isolated Anaconda environment with Python `3.7.15`. The dependency versions are
+intentionally pinned because this project uses an older PyTorch stack:
+
 - torch==1.12.1
 - h5py==2.10.0
 - hydra-core==1.3.2
 - numpy==1.21.5
-- omegaconf==2.0.6
+- omegaconf==2.3.0
 
-You can install these requirements by running
+`omegaconf==2.3.0` is required because `hydra-core==1.3.2` declares
+`omegaconf>=2.2,<2.4`; the previously documented `omegaconf==2.0.6` is not a
+resolvable combination. Python `3.7.15` is recommended rather than an unbounded
+`>=3.7.15` range, since binary wheels for the pinned legacy packages are not
+available for every newer Python release.
+
+Create and activate the environment, then install the requirements:
+
 ```bash
+conda create -n deepscf python=3.7.15
+conda activate deepscf
 pip install -r requirements.txt
 ```
 
 If you plan to use a GPU with PyTorch, ensure that you install the appropriate PyTorch version compatible with your system and CUDA version. Refer to the [PyTorch installation guide](https://pytorch.org/get-started/previous-versions/) for detailed instructions .
 
-### Custom SIESTA Code  
+### Bundled SIESTA Source
 
-The [modified SIESTA code](https://github.com/Ryong-Gyu/SIESTA-for-DeepSCF) is required to generate grid-projected input features and perform non-SCF calculations using a predicted `RHO`. Please follow the installation and usage instructions in that repository.  
+The modified SIESTA source required to generate the grid-projected features and
+run a non-SCF calculation from a predicted `RHO` is included under
+[`src/siesta-4.1-b4/`](src/siesta-4.1-b4/). For a serial Linux build with
+GNU Fortran 10 or newer, install GNU Fortran, a C compiler, Make, and the
+development libraries for BLAS and LAPACK, then run from the project root:
 
+```bash
+(
+  cd src/siesta-4.1-b4/Obj
+  sh ../Src/obj_setup.sh
+  cp gfortran-system.make arch.make
+  make -j2
+)
 ```
-git clone https://github.com/Ryong-Gyu/SIESTA-for-DeepSCF.git
+
+The resulting executable is `src/siesta-4.1-b4/Obj/siesta`. Use this path
+explicitly in the example below: another SIESTA installation may not write
+`rhoatom` and `rhoover`. For other compilers or MPI builds, adapt the templates
+and follow the [build instructions](src/siesta-4.1-b4/Obj/README).
+
+### Reproduce one example through non-SCF
+
+After installing the Python dependencies, pretrained models, and bundled
+SIESTA, follow the [complete example](dft_calc/1.preprocess/README.md#complete-example-scf-to-non-scf).
+It uses the included `0001` structure and pseudopotentials to run:
+
+```text
+SCF → raw HDF5 → model-scaled HDF5 → predicted density → non-SCF
 ```
+
+The guide gives the commands and expected output files for every step.
+HDF5 datasets are excluded from Git; the example regenerates its input from
+the included SIESTA calculation files. It uses the pretrained Original model
+and that model's fixed scaling statistics.
 
 
 ### Prepare the dataset 
 
 
-To train DeepSCF, the dataset for molecular materials must be prepared in the `HDF5` file format. Each `HDF5` file should contain `numpy.array` with the shape of `[feature, x-index, y-index, z-index]`, in which the `feature` axis represents the three-dimensional distributions of target electron density $\rho$, initial electron density $\rho_0$, and additional features.
+To train DeepSCF, prepare one HDF5 file per structure. Each file contains
+`target` with shape `[x, y, z]` and `feature` with shape `[3, x, y, z]`.
+The preprocessing scripts write these datasets in the format expected by the
+training, prediction, and evaluation code.
 
-Specifically, the `feature` axis should include the following:
+The datasets and evaluation inputs used by the paper configurations are
+organized under [`datasets/`](datasets/README.md). Training inputs are stored in
+`datasets/train/`, while rotation, scaling, and example inputs are stored in
+`datasets/evaluation/`.
 
- - **First entry**: $\rho$ (*mendatory*)
- - **Second entry**: $\rho_0$ (*mendatory*)
- - **Other entries**: additional features (e.g. $\rho_{ion}$, $\rho_{S}$) (*optional*)
+The paper model cases use the following filesystem-safe names throughout
+`configs/`, `datasets/`, and generated result paths:
 
-**All feature should be standardized**, except the the $\rho$ feature. For the $\rho_0$, the `mean` and `std` values should be recorded for reconstructing the predicted electron density (see the following **Train DeepSCF** section).  
+| Paper case | Project name |
+|---|---|
+| Original | `original` |
+| R | `r` |
+| R+S | `r_plus_s` |
+| (R+S)×2 | `r_plus_s_x2` |
+| (R+S)×3 | `r_plus_s_x3` |
+
+The setup script installs the corresponding final weights and train/test split
+indexes under `pretrained/<model_case>/{model.pt,data.pkl}`.
+
+The unscaled target density $\rho$ comes from `Molecular.RHO`. The input
+`feature` channels are ordered as follows:
+
+| Channel | SIESTA output | Scaling statistics |
+|---|---|---|
+| `feature[0]` | `Molecular.IOCH` | `mean2`, `std2` |
+| `feature[1]` | `rhoatom` ($\rho_0$) | `mean3`, `std3` |
+| `feature[2]` | `rhoover` | `mean4`, `std4` |
+
+All three input channels are standardized. Set `model.mean` and `model.std`
+to `mean3` and `std3` so the model reconstructs the initial density from
+`feature[1]`. For pretrained models, use their provided scale files instead
+of calculating new statistics from the prediction inputs.
 
 
-To obtain these features, one can utilize SIESTA program. The $\rho$ (stored in `.RHO` file) can be generated by performing SIESTA calculation with the `SaveRho` option set to `true`. It should be noted that the $\rho_0$ and the other feature cannot be obtained directly from the original SIESTA program. They can only be generated by modifying the SIESTA source code. All SIESTA grid objects are stored in Fortran unformatted format. To convert them into `numpy.array` for generating dataset, one can utilze the `utils/siestaio.py`.  
+Use the bundled SIESTA source to generate the target density and input features.
+For an SCF calculation, fix the grid dimensions and enable the charge-density
+outputs as follows:
+
+
+```
+SaveRho          .true.
+SaveIonicCharge  .true.
+```
+
+`SaveRho` writes `Molecular.RHO`, and `SaveIonicCharge` writes
+`Molecular.IOCH` when `SystemLabel` is `Molecular`. The bundled source also
+"manually" writes `rhoatom` and `rhoover`, which are used by the preprocessing pipeline.
+Note that you can also adjust `MeshSizes` for the desired simulation grid:
+
+```text
+%block MeshSizes
+  80 80 80
+%endblock MeshSizes
+```
+
+ A complete SCF input is
+available in
+[`dft_calc/1.preprocess/input/RUN.fdf`](dft_calc/1.preprocess/input/RUN.fdf).
+All SIESTA grid objects are stored in Fortran unformatted format and can be
+read with `utils/siestaio.py`.
+
+To run a single-shot non-SCF calculation from a predicted density, place the
+predicted grid in the calculation directory as `In.RHO` and use these options:
+
+```text
+MaxSCFIterations  1
+SCF.MustConverge  .false.
+SCF.Mix.First     .false.
+SCF.Read.Charge   .true.
+```
+
+`SCF.Read.Charge` makes the bundled source read `In.RHO`, while the one-step
+settings prevent a normal SCF convergence cycle. The cell and `MeshSizes` must
+match the predicted grid. See
+[`dft_calc/2.evaluation/input/RUN.fdf`](dft_calc/2.evaluation/input/RUN.fdf)
+for the complete non-SCF input.
 
 **Note**
 Specially, the $\rho_0$ can be indirectly obtained by substracting the $\delta\rho$ (stored in `.DRHO` file), which can be generated by SIESTA calculation with the `SaveDeltaRho` option set to `true`, from the $\rho$ using the relation $\rho_0=\rho-\delta\rho$.  
+
+The provided preprocessing pipeline converts completed SIESTA calculations,
+calculates the feature scaling statistics, and assembles the HDF5 dataset:
+
+```bash
+python dft_calc/1.preprocess/1.convert.py CALCULATIONS RAW_DATA
+python dft_calc/1.preprocess/2.scale.py RAW_DATA scale.txt
+python dft_calc/1.preprocess/3.collect.py RAW_DATA scale.txt OUTPUT_DATASET
+```
+
+See the [preprocessing guide](dft_calc/1.preprocess/README.md) for the required
+SIESTA output files, directory layout, scaling procedure, and pretrained-model
+workflow. Its [complete example](dft_calc/1.preprocess/README.md#complete-example-scf-to-non-scf)
+uses concrete paths and continues through prediction and non-SCF.
 
 In the original paper, datasets were generated from the [TABS database](https://www.sciencedirect.com/science/article/pii/S2210271X14002400). The input and target feature used for the Org model can be found at https://doi.org/10.5281/zenodo.10075554.
 
 
 ## Train DeepSCF  
 
-Training **DeepSCF** is easily managed using `hydra`. The default values for the input configuration are already set in the `config/train.yaml` file. Below is an overview of the key configuration features:
+Training **DeepSCF** is easily managed using `hydra`. The default values are set in `configs/train/default.yaml`, and the paper experiment configurations are organized under `configs/train/`. Below is an overview of the key configuration features:
 
 **Hydra**  
 - **`run.dir`**: Defines the directory where training results will be saved. The folder can be structured by date and time (e.g., `./results/train/2024-11-26/14-30-45`), or you can specify a custom path name.  
@@ -81,24 +215,34 @@ Training **DeepSCF** is easily managed using `hydra`. The default values for the
 - **`std`**: Standard deviation for $\rho_0$ in the input features
 
 
-One can modify the `config/train.yaml` file and start the training process using the following commend:
+Run the default training configuration with:
 
 ```bash
 python train.py
 ```
 
-Alternatively, you can manually override specific configurations directly in the command line. For example:
+To run one of the configurations used for the paper, select its path relative to `configs/train` without the `.yaml` extension. For example:
 
 ```bash
-python train.py dataset.path='dataset/1.TABS/1.Augmentation_x1'
+python train.py --config-name=hyperparameter/features/input_1
+```
+
+Individual configuration values can also be overridden directly from the
+command line using Hydra's `key=value` syntax. For example:
+
+```bash
+python train.py model.layers=64 optimizer.lr=1e-4 train.epochs=200
 ```
 
 ## Predict with DeepSCF
 
-Once the training have been done, the `model.pt` file will be generated. Based on this trained model, one can predict $\rho$ for any material by providing its input feature. To start prediction, the `config/predict.yaml` files shoud be specified. Below are the key configuration features:
+Once training has completed, a `model.pt` file is generated. The final models
+used in the paper are also available under `pretrained/`. Prediction
+configurations are organized under `configs/predict/`. Below are the key
+configuration features:
 
 **Load**  
-- **`path`**: Path to the pre-trained model to be used for prediction (e.g.`./results/train/2024-11-26/14-30-45/model.pt'`). 
+- **`model`**: Project-relative path to the pretrained model used for prediction (e.g. `pretrained/original/model.pt`).
 
 **Model**  
 - All configuration settings should be same with those used for using the pre-trained model
@@ -108,19 +252,43 @@ Once the training have been done, the `model.pt` file will be generated. Based o
 - **`cell`**: Defines the lattice vectors of the simulation cell in `Bohr` unit. This does not necessarily describe the full case but rather serves as a reference for a specific material.
 - **`mesh`**: Specifies the number of grid points along the x-, y-, and z-directions corresponding to the simulation box defined by `cell`.
 
-One can modify the `config/train.yaml` file and start the prediction process using the following commend:
+Run the default configuration or select a recorded experiment configuration as follows:
 ```bash
 python predict.py
+python predict.py --config-name=examples/r_plus_s_x3
 ```
 
 Then, the predicted $\rho$ for each material will be stored in in SIESTA `grid object` based on the `sietaio.py` module.
+
+
+## Evaluate DeepSCF
+
+`evaluate.py` measures the percentage error of a trained model against the
+target electron densities stored in the HDF5 files. Its configuration is read
+from `configs/evaluate/` and uses the same model settings and target path format
+as prediction. The target can be a single HDF5 file, a directory containing
+HDF5 files, or a `data.pkl` file containing the train/test split.
+
+Run the default evaluation configuration or select a recorded configuration as
+follows:
+
+```bash
+python evaluate.py
+python evaluate.py --config-name=examples/r_plus_s_x3
+```
+
+The per-material errors are written to `log.txt`, and the aggregate percentage
+error is written to `summary.txt` in the configured Hydra output directory.
 
 
 ## Predict Electronic Structures with DeepSCF  
 
 After obtaining the predicted electron density $\rho$ in the SIESTA `grid object` format, the corresponding electronic structure can be evaluated by performing a single-shot non-SCF calculation.  
 
-As mentioned above, the original SIESTA code does not natively support reading an external charge density $\rho$ and using it as the initial or fixed input density. To enable this functionality, use the modified [`SIESTA` code](https://github.com/Ryong-Gyu/SIESTA-for-DeepSCF).  
+Use the bundled SIESTA source and the non-SCF options described in
+**Prepare the dataset**. The predicted density must be provided as `In.RHO` in
+the SIESTA calculation directory; a complete input template is available at
+[`dft_calc/2.evaluation/input/RUN.fdf`](dft_calc/2.evaluation/input/RUN.fdf).
 
 ## How to cite
 If you want to use DeepSCF, please cite:

@@ -5,6 +5,7 @@ import glob
 import pickle
 import h5py
 import hydra
+import os
 
 
 def random_split(path, ratio, augmentation, seed):
@@ -86,8 +87,11 @@ def load_dataloader(args):
         data_list = pickle.load(f)
 
     # dataset
-    train_list = data_list['train']
-    test_list = data_list['test']
+    original_cwd = hydra.utils.get_original_cwd()
+    train_list = [item if os.path.isabs(item) else os.path.join(original_cwd, item)
+                  for item in data_list['train']]
+    test_list = [item if os.path.isabs(item) else os.path.join(original_cwd, item)
+                 for item in data_list['test']]
     train_set = HDF5Dataset(train_list, args.dataset.use_cache, args.dataset.cache_size)
     test_set = HDF5Dataset(test_list)
 

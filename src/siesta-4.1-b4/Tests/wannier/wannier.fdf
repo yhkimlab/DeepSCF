@@ -1,0 +1,66 @@
+SystemName  silicon: occupied bonding wannier functions 
+SystemLabel wannier
+
+NumberOfAtoms 2
+NumberOfSpecies 1
+
+%block ChemicalSpeciesLabel
+ 1 14 Si
+%endblock ChemicalSpeciesLabel
+
+LatticeConstant 5.150 Bohr
+%block LatticeVectors
+  1.0 0.0 1.0
+  0.0 1.0 1.0
+  1.0 1.0 0.0
+%endblock LatticeVectors
+
+AtomicCoordinatesFormat Fractional
+%block AtomicCoordinatesAndAtomicSpecies
+ 0.75000  0.75000   0.75000 1 Si
+ 0.00000  0.00000   0.00000 1 Si
+%endblock AtomicCoordinatesAndAtomicSpecies
+
+PAO.BasisSize dzp
+PAO.EnergyShift 0.25 eV
+#PAO.SplitNorm   0.15
+
+XC.functional LDA
+XC.authors CA
+SpinPolarized          F
+
+SaveHS                 T
+AtomCoorFormatOut     Ang
+
+%block kgrid_Monkhorst_Pack
+   4  0  0  0.5
+   0  4  0  0.5
+   0  0  4  0.5
+%endblock Kgrid_Monkhorst_Pack
+Diag.ParallelOverK	F
+
+MeshCutoff        100 Ry
+
+DM.MixingWeight      0.20
+DM.NumberPulay       10
+DM.Tolerance         1.d-4
+
+SolutionMethod       diagon
+DivideAndConquer     false
+
+#LongOutput .true.
+BandLinesScale ReciprocalLatticeVectors
+%block BandLines
+1   0.500  0.500  0.500 L       # Begin at L
+20  0.000  0.000  0.000 \Gamma  # 20 points from L to gamma
+20  0.500  0.500  0.000 X
+ 1  0.000  0.500 -0.500 K
+20  0.000  0.000  0.000 \Gamma  # 30 points from X to gamma
+%endblock BandLines
+
+Siesta2Wannier90.WriteMmn       .true.
+Siesta2Wannier90.WriteAmn       .true.
+Siesta2Wannier90.WriteEig       .true.
+Siesta2Wannier90.WriteUnk       .true.
+Siesta2Wannier90.NumberOfBands  4
+

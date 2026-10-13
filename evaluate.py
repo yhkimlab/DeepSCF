@@ -7,7 +7,6 @@ from omegaconf import DictConfig, OmegaConf
 from model import ResUNet
 from utils import data, log
 from utils.unit import ang2bohr
-import siestaio as io
 import pickle
 import h5py
 import numpy as np
@@ -80,7 +79,7 @@ def evaluate(args, device, test_list, model, train_list = None):
 
 
 
-@hydra.main(config_path="config", config_name="predict")
+@hydra.main(config_path="configs/evaluate", config_name="default")
 def main(args: OmegaConf):
 
     # gpu/cpu
@@ -112,8 +111,11 @@ def main(args: OmegaConf):
     else:
         with open(path_data,'rb') as f:
             data_list = pickle.load(f)
-        target_list = data_list['test']
-        train_list = data_list['train']
+        original_cwd = hydra.utils.get_original_cwd()
+        target_list = [path if os.path.isabs(path) else os.path.join(original_cwd, path)
+                       for path in data_list['test']]
+        train_list = [path if os.path.isabs(path) else os.path.join(original_cwd, path)
+                      for path in data_list['train']]
         evaluate(args, device, target_list, model, train_list)
 
 if __name__=='__main__':
