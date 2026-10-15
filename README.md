@@ -276,18 +276,39 @@ match the predicted grid. A complete non-SCF input template is available at
 
 ## Reproduce one example through non-SCF
 
-After installing the Python dependencies, pretrained models, and bundled
-SIESTA, follow the [complete example](dft_calc/1.preprocess/README.md#complete-example-scf-to-non-scf).
-It uses the included `0001` structure and pseudopotentials to run:
+Run the included `0001` molecule through a complete, checked workflow with the
+pretrained **Original** model:
 
 ```text
-SCF → raw HDF5 → model-scaled HDF5 → predicted density → non-SCF
+Structure + pseudopotentials
+    └─ reference SCF ─┬─ Molecular.RHO ────────────── reference for evaluation
+                     └─ IOCH + rhoatom + rhoover
+                          └─ fixed model scaling → DeepSCF → predicted RHO
+                                                               └─ one-step non-SCF
 ```
 
-The guide gives the commands and expected output files for every step.
-HDF5 datasets are excluded from Git; the example regenerates its input from
-the included SIESTA calculation files. It uses the pretrained Original model
-and that model's fixed scaling statistics.
+The [step-by-step guide](dft_calc/1.preprocess/README.md#complete-example-scf-to-non-scf)
+explains the role of each file, gives runnable commands and success checks,
+and shows an actual density comparison. It covers:
+
+1. Building the bundled modified SIESTA and running a converged reference.
+2. Converting four grids into HDF5 and applying the Original model's fixed scale.
+3. Predicting a density and measuring its error against the reference.
+4. Reading that prediction as `In.RHO` for one non-SCF iteration.
+5. Comparing total energy, eigenvalues and forces with the SCF reference.
+
+No training or downloaded HDF5 dataset is needed for this example. The
+reference SCF regenerates the features and supplies the comparison target;
+that target is not an input to the neural network. Because the walkthrough
+includes reference SCF, its total runtime is not a DeepSCF speedup benchmark.
+
+In a CPU run of this example, SCF converged
+in 11 iterations and non-SCF completed in one. The predicted density error
+was **1.8169%**, compared with **14.3897%** for the atomic baseline. The
+absolute total-energy error was **0.004795 eV/atom (4.795 meV/atom)**,
+meeting the **0.04 eV/atom** chemical-accuracy criterion adopted for this
+walkthrough. For 16 atoms this corresponds to +0.07672 eV in total.
+Energy accuracy, self-consistency and force accuracy are assessed separately.
 
 ## How to cite
 If you want to use DeepSCF, please cite:
